@@ -1,7 +1,7 @@
 name = "MetXCultureHub"
 uuid = "c8a5ff98-18da-494d-98cc-f2d3bae7da4c"
 authors = ["The members of MetabolicXploration"]
-version = "0.1.0"
+version = "0.1.1"
 
 [compat]
 julia = "1.6"
