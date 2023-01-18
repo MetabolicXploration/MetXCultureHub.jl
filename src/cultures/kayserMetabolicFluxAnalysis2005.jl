@@ -123,6 +123,11 @@ function _load_kayserMetabolicFluxAnalysis2005()
     # s_met [g L^{-1}] / MM_met [g mol^{-1}] = s_met [mol L^{-1}] * 1e-3 = s_met [mmol L^{-1}]
     for i in eachindex(t1Ds)
 
+        # Xv
+        unit = "gCDW L^{-1}"
+        val = raw["Table1"]["Xv"][i+2]
+        push!(db, "X", [i]; val, unit)
+
         # s_glc
         unit = "mM"
         val = raw["Table1"]["sGLC"][i+2] * 1e3 / 180.156
