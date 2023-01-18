@@ -11,8 +11,9 @@ module MetXCultureHub
     using Serialization
 
     import Scratch
-    
 
+    export query, queryfirst
+    
     #! include .
     include("api.jl")
     include("tools.jl")
@@ -33,7 +34,7 @@ module MetXCultureHub
         
         empty!(CULTURES_REG)
         _register_folsomPhysiologicalBiomassElemental2015()
-        # _register_kayserMetabolicFluxAnalysis2005()
+        _register_kayserMetabolicFluxAnalysis2005()
         # _register_seniorRegulationNitrogenMetabolism1975()
         _register_rathCharacterisationCellGrowth2017()
         

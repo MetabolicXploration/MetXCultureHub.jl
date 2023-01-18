@@ -2391,35 +2391,31 @@ function _load_rathCharacterisationCellGrowth2017()
             
             apiid = string("c_", lowercase(rawid))
             if dat["unit"] == "µM"
-                push!(db, apiid, [culid];
-                    # c_met [µM] * 1e-3 = c_met [mM]
-                    val = dat["val"] * 1e-3,
-                    unit = "mM"
-                )
+                # c_met [µM] * 1e-3 = c_met [mM]
+                val = dat["val"] * 1e-3
+                unit = "mM"
+                push!(db, apiid, [culid]; val, unit)
             end
 
             if dat["unit"] == "mM"
-                push!(db, apiid, [culid];
-                    # c_met [µM] * 1e-3 = c_met [mM]
-                    val = dat["val"],
-                    unit = "mM"
-                )
+                # c_met [µM] * 1e-3 = c_met [mM]
+                val = dat["val"]
+                unit = "mM"
+                push!(db, apiid, [culid]; val, unit)
             end
         end
         
         # c_met [g/L] / MM_met [g/mol] = c_met [mol/L]
         # c_met [mol/L] * 1e3 = c_met [mmol/L]
-        push!(db, "c_lac", [culid];
-            unit = "mM",
-            val = raw["42_MAX_UB"]["LAC"]["val"] * 1e3 / 90.08
-        )
+        unit = "mM"
+        val = raw["42_MAX_UB"]["LAC"]["val"] * 1e3 / 90.08
+        push!(db, "c_lac", [culid]; val, unit)
 
         # non common data
         for apiid in ["c_glc", "c_gln", "c_galc"]
-            push!(db, apiid, [culid];
-                val = raw["Table4.10"][culid][apiid]["val"],
-                unit = raw["Table4.10"][culid][apiid]["unit"]
-            )
+            val = raw["Table4.10"][culid][apiid]["val"],
+            unit = raw["Table4.10"][culid][apiid]["unit"]
+            push!(db, apiid, [culid]; val. unit)
         end
     
     end # for culid in culids
@@ -2433,16 +2429,14 @@ function _load_rathCharacterisationCellGrowth2017()
     for culid in raw["culids"]
         
         # D [1/h]
-        push!(db, "D", [culid];
-            val = raw["Table4.11"][culid]["D"]["val"],
-            unit = "h^{-1}"
-        )
+        val = raw["Table4.11"][culid]["D"]["val"]
+        unit = "h^{-1}"
+        push!(db, "D", [culid]; val, unit)
 
         # μ [1/h]
-        push!(db, "μ", [culid];
-            val = raw["Table4.11"][culid]["μ"]["val"],
-            unit = "h^{-1}"
-        )
+        val = raw["Table4.11"][culid]["μ"]["val"]
+        unit = "h^{-1}"
+        push!(db, "μ", [culid]; val, unit)
 
         # X
         # 4/3π (CD/2)^3 [μm^3] * ρ [pgCDW/μm^3] = mcell [pgCDW]
@@ -2488,10 +2482,10 @@ function _load_rathCharacterisationCellGrowth2017()
             # q [nmol/ pgCDW L] * 1e-6 = q [mmol/ pgCDW L]
             # q [mmol/ pgCDW L] * 1e12 = q [mmol/ gCDW L]
             q0 = raw["Table4.11"][culid][rawid]["val"]
-            q = q0 * 1e-9 * 1e-6 * 1e12 / ρ
-
+            val = q0 * 1e-9 * 1e-6 * 1e12 / ρ
+            unit = "mmol gCDW^{-1} L^{-1}"
             apiid = string("q_", lowercase(rawid[2:end]))
-            push!(db, apiid, [culid]; val = q, unit = "mmol gCDW^{-1} L^{-1}")
+            push!(db, apiid, [culid]; val, unit)
         end
         
         # qA1AT [pg/ cell d]
