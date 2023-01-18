@@ -2368,7 +2368,7 @@ function _load_rathCharacterisationCellGrowth2017()
     # Table 4.11
     raw["Table4.11"] = _load_rathCharacterisationCellGrowth2017_table_4_11()
 
-    push!(db, "RAW" => raw)
+    push!(db, "raw" => raw)
 
     ## -------------------------------------
     # data/api

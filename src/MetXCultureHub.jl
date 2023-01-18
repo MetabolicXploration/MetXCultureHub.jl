@@ -32,7 +32,7 @@ module MetXCultureHub
         global CULS_DIR = Scratch.get_scratch!("cultures_reg")
         
         empty!(CULTURES_REG)
-        # _register_folsomPhysiologicalBiomassElemental2015()
+        _register_folsomPhysiologicalBiomassElemental2015()
         # _register_kayserMetabolicFluxAnalysis2005()
         # _register_seniorRegulationNitrogenMetabolism1975()
         _register_rathCharacterisationCellGrowth2017()
