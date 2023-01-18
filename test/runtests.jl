@@ -26,25 +26,31 @@ using Test
         
             # Both supplements agree
             @test isapprox(
-                raw["Supp4"][culid]["q_glc"]["vals"],   # from s4
-                api[culid]["q_glc"]["vals"];            # from s2
+                raw["Supp4"][culid]["q_glc"]["val"],   # from s4
+                api[culid]["q_glc"]["val"];            # from s2
                 rtol = 1e-2
             )
             @test isapprox(
-                raw["Supp4"][culid]["q_o2"]["vals"],    # from s4
-                api[culid]["q_o2"]["vals"];             # from s2
+                raw["Supp4"][culid]["q_o2"]["val"],    # from s4
+                api[culid]["q_o2"]["val"];             # from s2
                 rtol = 1e-2
             )
         
         end
 
-        # check (TODO: move to tests)
         # At nutrient limitation we nake the common assumtion that all nut is used
         # s4_q_glc = c_glc * D / X (at C_Limited)
-        @test isapprox(
-            raw["Supp4"]["C_Limited"]["q_glc"]["vals"], 
-            api["C_Limited"]["c_glc"]["vals"] .* api["C_Limited"]["D"]["vals"] ./ api["C_Limited"]["X"]["vals"]; 
+        @test isapprox( 
+            raw["Supp4"]["C_Limited"]["q_glc"]["val"], # from sup
+            api["C_Limited"]["c_glc"]["val"] .* api["C_Limited"]["D"]["val"] ./ api["C_Limited"]["X"]["val"]; 
             rtol = 1e-2
+        )
+
+        # check
+        @assert isapprox(
+            api["N_Limited"]["q_nh4"]["val"], # from Fig1
+            api["N_Limited"]["c_nh4"]["val"] .* api["N_Limited"]["D"]["val"] ./ api["N_Limited"]["X"]["val"], # from nut limitation
+            ; rtol = 1e-2    
         )
     
     end

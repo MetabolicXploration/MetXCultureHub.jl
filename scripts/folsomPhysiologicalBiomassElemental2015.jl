@@ -18,19 +18,19 @@ let
         [
             Fig1["A"], 
             (;
-                title = _regex_str("Fig1  A"),
+                title = _latex_str("Fig1  A"),
                 ylim = [0, 0.6], 
-                xlabel = _regex_str("D [", Fig1["A"]["xunit"], "]"),
-                ylabel = _regex_str("Y_{X/glc} [", Fig1["A"]["yunit"], "]"),
+                xlabel = _latex_str("D [", Fig1["A"]["xunit"], "]"),
+                ylabel = _latex_str("Y_{X/glc} [", Fig1["A"]["yunit"], "]"),
             )
         ], 
         [
             Fig1["B"], 
             (;
-                title = _regex_str("Fig1  B"),
+                title = _latex_str("Fig1  B"),
                 ylim = [0, 0.2], 
-                xlabel = _regex_str("D [", Fig1["B"]["xunit"], "]"),
-                ylabel = _regex_str("Y_{X/N} [", Fig1["B"]["yunit"], "]"),
+                xlabel = _latex_str("D [", Fig1["B"]["xunit"], "]"),
+                ylabel = _latex_str("Y_{X/N} [", Fig1["B"]["yunit"], "]"),
             )
         ], 
         [
@@ -38,8 +38,8 @@ let
             (;
                 title = "\$Fig1~~C\$",
                 ylim = [0, 100], 
-                xlabel = _regex_str("D [", Fig1["C"]["xunit"], "]"),
-                ylabel = _regex_str("q_{glc} [", Fig1["C"]["yunit"], "]"),
+                xlabel = _latex_str("D [", Fig1["C"]["xunit"], "]"),
+                ylabel = _latex_str("q_{glc} [", Fig1["C"]["yunit"], "]"),
             )
         ], 
     ]
