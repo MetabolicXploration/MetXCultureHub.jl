@@ -98,11 +98,10 @@ function _load_kayserMetabolicFluxAnalysis2005()
     # -------------------------------
     # db
     db = TagDB()
-    
 
     # -------------------------------
     # data/raw
-    global raw = Dict()
+    raw = Dict()
 
     # Table1
     raw["Table1"] = _load_kayserMetabolicFluxAnalysis2005_table1() 
