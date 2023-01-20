@@ -27,7 +27,7 @@ function _load_kayserMetabolicFluxAnalysis2005_table1()
     table1["Xv"] = ["Cell density", "gDW/ L",
         5.07, 5.05, 5.29, 5.24, 5.23, 5.41, 5.28, 
         5.53, 5.53, 5.61, 5.69, 5.88, 5.27, 3.82, 1.05];
-    table1["sGLC"] = ["Glucose effluent conc", "g L^{-1}",  
+    table1["sGLC"] = ["Glucose effluent conc", "g L^{-1}", 
         0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 
         0.000, 0.000, 0.229, 0.295, 0.259, 0.398, 1.822, 6.048];
     table1["sAC"] = ["Acetic acid effluent conc", "g L^{-1}", 
@@ -120,27 +120,27 @@ function _load_kayserMetabolicFluxAnalysis2005()
     t1Ds = Vector{Float64}(raw["Table1"]["D"][3:end])
 
     # s_met [g L^{-1}] / MM_met [g mol^{-1}] = s_met [mol L^{-1}] * 1e-3 = s_met [mmol L^{-1}]
-    for i in eachindex(t1Ds)
+    for (i, D) in enumerate(t1Ds)
 
         # Xv
         unit = "gCDW L^{-1}"
         val = raw["Table1"]["Xv"][i+2]
-        push!(db, "X", [i]; val, unit)
+        push!(db, "X", i, D; val, unit)
 
         # s_glc
         unit = "mM"
         val = raw["Table1"]["sGLC"][i+2] * 1e3 / 180.156
-        push!(db, "s_glc", [i]; val, unit)
+        push!(db, "s_glc", i, D; val, unit)
         
         # s_ac
         unit => "mM"
         val => raw["Table1"]["sAC"][i+2] * 1e3 / 60.02
-        push!(db, "s_ac", [i]; val, unit)
+        push!(db, "s_ac", i, D; val, unit)
         
         # s_nh4
         unit = "mM"
         val = raw["Table1"]["sNH4"][i+2] * 1e3 / 18.0
-        push!(db, "s_nh4", [i]; val, unit)
+        push!(db, "s_nh4", i, D; val, unit)
 
     end
 
@@ -151,32 +151,32 @@ function _load_kayserMetabolicFluxAnalysis2005()
     t2Ds = Vector{Float64}(raw["Table2"]["D"][3:end])
 
     # q_met [g/ g h] * 1e3 / MM_met [g/mol] = q_nut [mmol/ g h]
-    for i in eachindex(t2Ds)
+    for (i, D) in enumerate(t2Ds)
         
         # q_glc
         unit = "mmol g^{-1} h^{-1}"
         val = raw["Table2"]["uGLC"][i+2] * 1e3 / 180.156
-        push!(db, "q_glc", [i]; val, unit)
+        push!(db, "q_glc", i, D; val, unit)
 
         # q_co2
         unit = "mmol g^{-1} h^{-1}"
         val = raw["Table2"]["uCO2"][i+2] * 1e3 / 44.01
-        push!(db, "q_co2", [i]; val, unit)
+        push!(db, "q_co2", i, D; val, unit)
 
         # q_o2
         unit = "mmol g^{-1} h^{-1}"
         val = raw["Table2"]["uO2"][i+2] * 1e3 / 15.999
-        push!(db, "q_o2", [i]; val, unit)
+        push!(db, "q_o2", i, D; val, unit)
 
         # q_ac
         unit = "mmol g^{-1} h^{-1}"
         val = raw["Table2"]["uAC"][i+2] * 1e3 / 60.02
-        push!(db, "q_ac", [i]; val, unit)
+        push!(db, "q_ac", i, D; val, unit)
 
         # q_nh4
         unit = "mmol g^{-1} h^{-1}"
         val = raw["Table2"]["uNH4"][i+2] * 1e3 / 18.0
-        push!(db, "q_nh4", [i]; val, unit)
+        push!(db, "q_nh4", i, D; val, unit)
 
     end
 
@@ -184,43 +184,44 @@ function _load_kayserMetabolicFluxAnalysis2005()
     # medium
     # I take into consideration only the typical limiting metabolites
 
-    for i in eachindex(t2Ds)
+    for (i, D) in enumerate(t2Ds)
         
         # c_glc
         # C(10 [g/L]) * 1000/ MM(180.156 [g/mol]) = [mM]
         unit = "mM"
         val = 10.0 * 1e3 / 180.156
-        push!(db, "c_glc", [i]; val, unit)
+        push!(db, "c_glc", i, D; val, unit)
         
         # c_nh4
         # 2 * C(8 [g/L]) * 1000/ MM(132.14 [g/mol]) + 2 * C(0.8 [g/L]) * 1000/ MM(132.07 [g/mol]) = [mM]
         unit = "mM"
         val = 2 * (8 * 1e3 / 132.14) + 2 * (0.8 * 1e3 / 132.07)
-        push!(db, "c_nh4", [i]; val, unit)
+        push!(db, "c_nh4", i, D; val, unit)
 
         # c_thm
         # C(4 mg/L)/ MM(265 [g/mol]) = [mM] (Thiamine)
         name = "Thiamine medium conc"
         unit = "mM"
         val = (4.0 / 265.0)
-        push!(db, "c_thm", [i]; val, unit, name)
+        push!(db, "c_thm", i, D; val, unit, name)
         
         # c_cit
         # C(12 mg/L) / MM(245 [g/mol]) + C(0.35 [g/L]) * 1000/ MM(192 + 18 [g/mol]) = [mM]
         unit = "mM"
         val = 9.0
-        push!(db, "c_cit", [i]; val, unit)
+        push!(db, "c_cit", i, D; val, unit)
 
     end
 
     # -------------------------------
     # D [1/h]
     @assert all(t2Ds .== t1Ds[1:end-2])
-    for i in eachindex(t1Ds)
+    for (i, D) in enumerate(t1Ds)
         unit = "h^{-1}"
         val = t1Ds[i]
-        push!(db, "D", [i]; val, unit)
+        push!(db, "D", i, D; val, unit)
     end
+    push!(db, "I"; val = eachindex(t1Ds))
 
     return db
 end

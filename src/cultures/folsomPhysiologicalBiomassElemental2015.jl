@@ -540,7 +540,7 @@ end
 
 ## ------------------------------------------------------------------
 ## ------------------------------------------------------------------
-function _load_folsomPhysiologicalBiomassElemental2015()
+function _load_folsomPhysiologicalBiomassElemental2015_db()
 
 
     ## -------------------------------------
@@ -583,8 +583,14 @@ function _load_folsomPhysiologicalBiomassElemental2015()
             unit = "h^{-1}"
             val = D
             err = 0.0
-            push!(db, "D", [culid, i]; val, err, unit)
+            push!(db, "D", i, culid; val, err, unit)
         end
+    end
+
+    # -------------------------------
+    # I
+    for culid in cultures
+        push!(db, "I", culid; val = eachindex(Ds))
     end
 
     # -------------------------------
@@ -601,7 +607,7 @@ function _load_folsomPhysiologicalBiomassElemental2015()
                 unit = "mM"
                 val = conc
                 err = 0.0
-                push!(db, apiid, [culid, i]; val, err, unit)
+                push!(db, apiid, i, culid; val, err, unit)
             end
         end
         
@@ -612,7 +618,7 @@ function _load_folsomPhysiologicalBiomassElemental2015()
             unit = "mM"
             val = conc * 1e-3
             err = 0.0
-            push!(db, "c_fe", [culid, i]; val, err, unit)
+            push!(db, "c_fe", i, culid; val, err, unit)
         end
         
     end
@@ -674,13 +680,13 @@ function _load_folsomPhysiologicalBiomassElemental2015()
         unit = "mmol gCDW^{-1} h^{-1}"
         val = raw["Supp2"][culid]["q_glc"]["val"][i] ./ 6.0
         err = raw["Supp2"][culid]["q_glc"]["err"][i] ./ 6.0
-        push!(db, "q_glc", [culid, i]; val, err, unit)
+        push!(db, "q_glc", i, culid; val, err, unit)
         
         # q_o2
         unit = "mmol gCDW^{-1} h^{-1}"
         val = raw["Supp2"][culid]["q_o2"]["val"][i]
         err = raw["Supp2"][culid]["q_o2"]["err"][i]
-        push!(db, "q_o2", [culid, i]; val, err, unit)
+        push!(db, "q_o2", i, culid; val, err, unit)
     
     end
 
@@ -690,7 +696,7 @@ function _load_folsomPhysiologicalBiomassElemental2015()
             unit = "mmol gCDW^{-1} h^{-1}"
             val = raw["Supp4"][culid][q_id]["val"][i]
             err = raw["Supp4"][culid][q_id]["err"][i]
-            push!(db, q_id, [culid, i]; val, err, unit)
+            push!(db, q_id, i, culid; val, err, unit)
         end
     end
 
@@ -704,7 +710,7 @@ function _load_folsomPhysiologicalBiomassElemental2015()
         unit = "mmol gCDW^{-1} h^{-1}"
         val = Y_XN
         err = Y_XNerr
-        push!(db, "Y_X/N", [culid, i]; val, err, unit)
+        push!(db, "Y_X/N", i, culid; val, err, unit)
 
         # q_nh4 [mmol/ gCDW h] = D [1/h] / Y_X/N [gCDW/mmol]
         D = raw["Fig1"]["B"]["xval"][i]
@@ -712,7 +718,7 @@ function _load_folsomPhysiologicalBiomassElemental2015()
         unit = "mmol gCDW^{-1} h^{-1}"
         val = D / Y_XN
         err = Y_XNerr * D / Y_XN^2
-        push!(db, "q_nh4", [culid, i]; val, err, unit)
+        push!(db, "q_nh4", i, culid; val, err, unit)
     end
 
     # # N_Limited q_nh4
@@ -734,7 +740,7 @@ end
 
 ## ------------------------------------------------------------------
 function _register_folsomPhysiologicalBiomassElemental2015()
-    register_culture!("folsomPhysiologicalBiomassElemental2015", _load_folsomPhysiologicalBiomassElemental2015;
+    register_culture!("folsomPhysiologicalBiomassElemental2015", _load_folsomPhysiologicalBiomassElemental2015_db;
         source = "Folsom, James Patrick, and Ross P. Carlson. “Physiological, Biomass Elemental Composition and Proteomic Analyses of Escherichia Coli Ammonium-Limited Chemostat Growth, and Comparison with Iron- and Glucose-Limited Chemostat Growth.” Microbiology (Reading, England) 161, no. 8 (August 2015): 1659–70. https://doi.org/10.1099/mic.0.000118.",
         desc = "Data from E. Coli chemostat cultures for 3 nutrient limiting conditions.",
         use_cache = false,

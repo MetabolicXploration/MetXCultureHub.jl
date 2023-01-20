@@ -296,6 +296,10 @@ function _load_seniorRegulationNitrogenMetabolism1975_db()
         unit = "h^{-1}"
         push!(db, "D", "NH4_Limited", i, D; val, unit)
     end
+    
+    # Is
+    Is = eachindex(t2Ds)
+    push!(db, "I", "NH4_Limited"; val = Is)
 
     # medium
     # c_glc
@@ -336,14 +340,14 @@ function _load_seniorRegulationNitrogenMetabolism1975_db()
     end
 
     # TODO: move to tests
-    _s_glc = query(db, "s_glc", "NH4_Limited", 1:20; extract = "val")
-    _c_glc = query(db, "c_glc", "NH4_Limited", 1:20; extract = "val")
+    _s_glc = query(db, "s_glc", "NH4_Limited", Is; extract = "val")
+    _c_glc = query(db, "c_glc", "NH4_Limited", Is; extract = "val")
     @assert all(_s_glc .<= _c_glc)
     
     # TODO: move to tests
-    _X0 = query(db, "X", "NH4_Limited", 1:20; extract = "val")
-    _c_nh4 = query(db, "c_nh4", "NH4_Limited", 1:20; extract = "val")
-    _s_nh4 = query(db, "s_nh4", "NH4_Limited", 1:20; extract = "val")
+    _X0 = query(db, "X", "NH4_Limited", Is; extract = "val")
+    _c_nh4 = query(db, "c_nh4", "NH4_Limited", Is; extract = "val")
+    _s_nh4 = query(db, "s_nh4", "NH4_Limited", Is; extract = "val")
     _Y_XN = raw["Table2"]["NH4_Limited"]["Y_X/N"]["val"]
     _X1 = _Y_XN .* (_c_nh4 .- _s_nh4) .* 1e-3
     @assert isapprox(_X0, _X1; rtol = 5e-2)
@@ -351,7 +355,7 @@ function _load_seniorRegulationNitrogenMetabolism1975_db()
     # q_nh4 
     # (c_nh4 [mM] ,- s_nh4 [mM]) .* D [h^{-1}] ./ X [gCDW L^{-1}] = q_nh4 [mmol gCDW^{-1} h^{-1}]
     _c_nh4 = raw["Medium"]["NH4_Limited"]["c_nh4"]["val"]
-    _s_nh4 = query(db, "s_nh4", "NH4_Limited", 1:20; extract = "val")
+    _s_nh4 = query(db, "s_nh4", "NH4_Limited", Is; extract = "val")
     _D = raw["Table2"]["NH4_Limited"]["D"]["val"]
     _X = raw["Table2"]["NH4_Limited"]["X"]["val"]
     _vals = (_c_nh4 .- _s_nh4) .* _D ./ _X
@@ -363,10 +367,10 @@ function _load_seniorRegulationNitrogenMetabolism1975_db()
     
     # q_glc 
     # (c_glc [mM] - s_glc [mM]) * D [h^{-1}] / X [gCDW L^{-1}] = q_glc [mmol gCDW^{-1} h^{-1}]
-    _c_glc = query(db, "c_glc", "NH4_Limited", 1:20; extract = "val")
-    _s_glc = query(db, "s_glc", "NH4_Limited", 1:20; extract = "val")
-    _D = query(db, "D", "NH4_Limited", 1:20; extract = "val")
-    _X = query(db, "X", "NH4_Limited", 1:20; extract = "val")
+    _c_glc = query(db, "c_glc", "NH4_Limited", Is; extract = "val")
+    _s_glc = query(db, "s_glc", "NH4_Limited", Is; extract = "val")
+    _D = query(db, "D", "NH4_Limited", Is; extract = "val")
+    _X = query(db, "X", "NH4_Limited", Is; extract = "val")
     _vals = (_c_glc .- _s_glc) .* _D ./ _X
     for (i, D) in enumerate(t2Ds)
         val = _vals[i]
@@ -384,6 +388,10 @@ function _load_seniorRegulationNitrogenMetabolism1975_db()
         unit = "h^{-1}"
         push!(db, "D", "GLU_Limited", i, D; val, unit)
     end
+
+    # Is
+    Is = eachindex(f2Ds)
+    push!(db, "I", "GLU_Limited"; val = Is)
 
     # medium (from methods)
     for (i, D) in enumerate(f2Ds)
@@ -418,6 +426,10 @@ function _load_seniorRegulationNitrogenMetabolism1975_db()
         push!(db, "D", "PRO_Limited", i, D; val, unit)
     end
 
+    # Is
+    Is = eachindex(f3Ds)
+    push!(db, "I", "PRO_Limited"; val = Is)
+
     # medium (from methods)
     for (i, D) in enumerate(f3Ds)
 
@@ -439,7 +451,6 @@ function _load_seniorRegulationNitrogenMetabolism1975_db()
         unit = raw["Fig3"]["X"]["unit"]
         push!(db, "X", "PRO_Limited", i, D; val, unit)
     end
-
     
     # -------------------------------
     # Glucose-limited: Glutamate N Source
@@ -451,6 +462,10 @@ function _load_seniorRegulationNitrogenMetabolism1975_db()
         unit = "h^{-1}"
         push!(db, "D", "GLC_Limited_GLU", i, D; val, unit)
     end
+
+    # Is
+    Is = eachindex(f5Ds)
+    push!(db, "I", "GLC_Limited_GLU"; val = Is)
     
     # medium (from methods)
     for (i, D) in enumerate(f5Ds)
@@ -491,9 +506,9 @@ function _load_seniorRegulationNitrogenMetabolism1975_db()
 
     # q_glc 
     # (c_glc [mM]) * D [h^{-1}] / X [gCDW L^{-1}] = q_glc [mmol gCDW^{-1} h^{-1}]
-    _c_glc = query(db, "c_glc", "GLC_Limited_GLU", 1:20; extract = "val")
-    _D = query(db, "D", "GLC_Limited_GLU", 1:20; extract = "val")
-    _X = query(db, "X", "GLC_Limited_GLU", 1:20; extract = "val")
+    _c_glc = query(db, "c_glc", "GLC_Limited_GLU", Is; extract = "val")
+    _D = query(db, "D", "GLC_Limited_GLU", Is; extract = "val")
+    _X = query(db, "X", "GLC_Limited_GLU", Is; extract = "val")
     _vals = (_c_glc .- 0.0) .* _D ./ _X
     for (i, D) in enumerate(f5Ds)
         val = _vals[i]
@@ -505,11 +520,11 @@ function _load_seniorRegulationNitrogenMetabolism1975_db()
     # q_glu 
     # (c_glu [mM] - s_glu [mM] - s_nh4 [mM]) * D [h^{-1}] / X [gCDW L^{-1}] = q_glu [mmol gCDW^{-1} h^{-1}]
     #  The free s_nh4 [mM] is assumed to come from c_glu [mM]
-    _c_glu = query(db, "c_glu", "GLC_Limited_GLU", 1:20; extract = "val")
-    _s_glu = query(db, "s_glu", "GLC_Limited_GLU", 1:20; extract = "val")
-    _s_nh4 = query(db, "s_nh4", "GLC_Limited_GLU", 1:20; extract = "val")
-    _D = query(db, "D", "GLC_Limited_GLU", 1:20; extract = "val")
-    _X = query(db, "X", "GLC_Limited_GLU", 1:20; extract = "val")
+    _c_glu = query(db, "c_glu", "GLC_Limited_GLU", Is; extract = "val")
+    _s_glu = query(db, "s_glu", "GLC_Limited_GLU", Is; extract = "val")
+    _s_nh4 = query(db, "s_nh4", "GLC_Limited_GLU", Is; extract = "val")
+    _D = query(db, "D", "GLC_Limited_GLU", Is; extract = "val")
+    _X = query(db, "X", "GLC_Limited_GLU", Is; extract = "val")
     _vals = (_c_glu .- _s_glu .- _s_nh4) .* _D ./ _X
     for (i, D) in enumerate(f5Ds)
         val = _vals[i]
@@ -517,11 +532,12 @@ function _load_seniorRegulationNitrogenMetabolism1975_db()
         push!(db, "q_glu", "GLC_Limited_GLU", i, D; val, unit)
     end
 
-    
+    push!(db, "I", "GLC_Limited_GLU"; val = eachindex(f5Ds))
+
     # check (# TODO: move to tests)
-    _c_glu = query(db, "c_glu", "GLC_Limited_GLU", 1:20; extract = "val")
-    _s_glu = query(db, "s_glu", "GLC_Limited_GLU", 1:20; extract = "val")
-    _s_nh4 = query(db, "s_nh4", "GLC_Limited_GLU", 1:20; extract = "val")
+    _c_glu = query(db, "c_glu", "GLC_Limited_GLU", Is; extract = "val")
+    _s_glu = query(db, "s_glu", "GLC_Limited_GLU", Is; extract = "val")
+    _s_nh4 = query(db, "s_nh4", "GLC_Limited_GLU", Is; extract = "val")
     @assert all(_c_glu .>= (_s_glu .+ _s_nh4))
 
     # TODO: add more table2 data
@@ -538,6 +554,10 @@ function _load_seniorRegulationNitrogenMetabolism1975_db()
         unit = "h^{-1}"
         push!(db, "D", "GLC_Limited_NH4", i, D; val, unit)
     end
+    
+    # Is
+    Is = eachindex(t2Ds)
+    push!(db, "I", "GLC_Limited_NH4"; val = Is)
 
     # medium (from methods)
     for (i, D) in enumerate(t2Ds)
@@ -572,9 +592,9 @@ function _load_seniorRegulationNitrogenMetabolism1975_db()
 
     # q_glc 
     # (c_glc [mM]) * D [h^{-1}] / X [gCDW L^{-1}] = q_glc [mmol gCDW^{-1} h^{-1}]
-    _c_glc = query(db, "c_glc", "GLC_Limited_NH4", 1:20; extract = "val")
-    _D = query(db, "D", "GLC_Limited_NH4", 1:20; extract = "val")
-    _X = query(db, "X", "GLC_Limited_NH4", 1:20; extract = "val")
+    _c_glc = query(db, "c_glc", "GLC_Limited_NH4", Is; extract = "val")
+    _D = query(db, "D", "GLC_Limited_NH4", Is; extract = "val")
+    _X = query(db, "X", "GLC_Limited_NH4", Is; extract = "val")
     _vals = (_c_glc .- 0.0) .* _D ./ _X
     for (i, D) in enumerate(t2Ds)
         val = _vals[i]
@@ -584,16 +604,18 @@ function _load_seniorRegulationNitrogenMetabolism1975_db()
 
     # q_nh4 
     # (c_nh4 [mM]) * D [h^{-1}] / X [gCDW L^{-1}] = q_nh4 [mmol gCDW^{-1} h^{-1}]
-    _c_nh4 = query(db, "c_nh4", "GLC_Limited_NH4", 1:20; extract = "val")
-    _s_nh4 = query(db, "s_nh4", "GLC_Limited_NH4", 1:20; extract = "val")
-    _D = query(db, "D", "GLC_Limited_NH4", 1:20; extract = "val")
-    _X = query(db, "X", "GLC_Limited_NH4", 1:20; extract = "val")
+    _c_nh4 = query(db, "c_nh4", "GLC_Limited_NH4", Is; extract = "val")
+    _s_nh4 = query(db, "s_nh4", "GLC_Limited_NH4", Is; extract = "val")
+    _D = query(db, "D", "GLC_Limited_NH4", Is; extract = "val")
+    _X = query(db, "X", "GLC_Limited_NH4", Is; extract = "val")
     _vals = (_c_nh4 .- _s_nh4) .* _D ./ _X
     for (i, D) in enumerate(t2Ds)
         val = _vals[i]
         unit = "mmol gCDW^{-1} h^{-1}"
         push!(db, "q_nh4", "GLC_Limited_NH4", i, D; val, unit)
     end
+
+    push!(db, "I", "GLC_Limited_NH4"; val = eachindex(t2Ds))
 
     # -------------------------------
     # errs

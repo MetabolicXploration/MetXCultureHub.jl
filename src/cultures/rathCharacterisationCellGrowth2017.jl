@@ -2384,7 +2384,7 @@ function _load_rathCharacterisationCellGrowth2017()
     )
 
     # Medium
-    for culid in raw["culids"]
+    for (i, culid) in enumerate(raw["culids"])
         
         # common data
         for (rawid, dat) in raw["42_MAX_UB"]
@@ -2394,14 +2394,14 @@ function _load_rathCharacterisationCellGrowth2017()
                 # c_met [µM] * 1e-3 = c_met [mM]
                 val = dat["val"] * 1e-3
                 unit = "mM"
-                push!(db, apiid, [culid]; val, unit)
+                push!(db, apiid, i, culid; val, unit)
             end
 
             if dat["unit"] == "mM"
                 # c_met [µM] * 1e-3 = c_met [mM]
                 val = dat["val"]
                 unit = "mM"
-                push!(db, apiid, [culid]; val, unit)
+                push!(db, apiid, i, culid; val, unit)
             end
         end
         
@@ -2409,13 +2409,13 @@ function _load_rathCharacterisationCellGrowth2017()
         # c_met [mol/L] * 1e3 = c_met [mmol/L]
         unit = "mM"
         val = raw["42_MAX_UB"]["LAC"]["val"] * 1e3 / 90.08
-        push!(db, "c_lac", [culid]; val, unit)
+        push!(db, "c_lac", i, culid; val, unit)
 
         # non common data
         for apiid in ["c_glc", "c_gln", "c_galc"]
             val = raw["Table4.10"][culid][apiid]["val"],
             unit = raw["Table4.10"][culid][apiid]["unit"]
-            push!(db, apiid, [culid]; val. unit)
+            push!(db, apiid, i, culid; val. unit)
         end
     
     end # for culid in culids
@@ -2426,17 +2426,17 @@ function _load_rathCharacterisationCellGrowth2017()
     ρ = 0.25 
     
     # from tabel 4.11
-    for culid in raw["culids"]
+    for (i, culid) in enumerate(raw["culids"])
         
         # D [1/h]
         val = raw["Table4.11"][culid]["D"]["val"]
         unit = "h^{-1}"
-        push!(db, "D", [culid]; val, unit)
+        push!(db, "D", i, culid; val, unit)
 
         # μ [1/h]
         val = raw["Table4.11"][culid]["μ"]["val"]
         unit = "h^{-1}"
-        push!(db, "μ", [culid]; val, unit)
+        push!(db, "μ", i, culid; val, unit)
 
         # X
         # 4/3π (CD/2)^3 [μm^3] * ρ [pgCDW/μm^3] = mcell [pgCDW]
@@ -2450,12 +2450,12 @@ function _load_rathCharacterisationCellGrowth2017()
         # Xv
         Xv0 = raw["Table4.11"][culid]["Xv"]["val"]
         Xv = (4/3) * π * (CD/2)^3 * ρ * 1e-12 * Xv0 * 1e6 * 1e3
-        push!(db, "Xv", [culid]; val = Xv, unit = "gCDW L^{-1}")
+        push!(db, "Xv", i, culid; val = Xv, unit = "gCDW L^{-1}")
         
         # Xd
         Xd0 = raw["Table4.11"][culid]["Xd"]["val"]
         Xd = (4/3) * π * (CD/2)^3 * ρ * 1e-12 * Xd0 * 1e6 * 1e3
-        push!(db, "Xd", [culid]; val = Xd, unit = "gCDW L^{-1}")
+        push!(db, "Xd", i, culid; val = Xd, unit = "gCDW L^{-1}")
 
         # Table4.11
         # Any["qLAC", "qGLN", "yCVv/GLC", "qGAL", "μ", "sALA", "qALA", "qA1AT", "Xv", 
@@ -2468,7 +2468,7 @@ function _load_rathCharacterisationCellGrowth2017()
             s_met = raw["Table4.11"][culid][rawid]["val"]
             @assert raw["Table4.11"][culid][rawid]["unit"] == "mM"
             apiid = string("s_", lowercase(rawid[2:end]))
-            push!(db, apiid, [culid]; val = s_met, unit = "mM")
+            push!(db, apiid, i, culid; val = s_met, unit = "mM")
         end
 
         # sA1AT [mg/L]
@@ -2485,7 +2485,7 @@ function _load_rathCharacterisationCellGrowth2017()
             val = q0 * 1e-9 * 1e-6 * 1e12 / ρ
             unit = "mmol gCDW^{-1} L^{-1}"
             apiid = string("q_", lowercase(rawid[2:end]))
-            push!(db, apiid, [culid]; val, unit)
+            push!(db, apiid, i, culid; val, unit)
         end
         
         # qA1AT [pg/ cell d]
@@ -2503,6 +2503,8 @@ function _load_rathCharacterisationCellGrowth2017()
         
         @assert isapprox(abs(c_glc * D / X), abs(q_glc); rtol = 12/100)
     end
+
+    push!(db, "I"; val = eachindex(raw["culids"]))
 
     return db
     
