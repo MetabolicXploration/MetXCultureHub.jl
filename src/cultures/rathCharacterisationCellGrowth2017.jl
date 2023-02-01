@@ -2413,9 +2413,9 @@ function _load_rathCharacterisationCellGrowth2017()
 
         # non common data
         for apiid in ["c_glc", "c_gln", "c_galc"]
-            val = raw["Table4.10"][culid][apiid]["val"],
+            val = raw["Table4.10"][culid][apiid]["val"]
             unit = raw["Table4.10"][culid][apiid]["unit"]
-            push!(db, apiid, i, culid; val. unit)
+            push!(db, apiid, i, culid; val, unit)
         end
     
     end # for culid in culids
