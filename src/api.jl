@@ -86,7 +86,7 @@ end
 culhubids() = collect(keys(CULTURES_REG))
 
 ## ------------------------------------------------------------------
-export queryvals, queryerrs, queryunits
-queryvals(db::TagDB, key, ts...) = query(db, key, ts...; extract = "val")
-queryunits(db::TagDB, key, ts...) = query(db, key, ts...; extract = "val")
-queryerrs(db::TagDB, key, ts...) = query(db::TagDB, key, ts...; extract = "unit")
+# export queryvals, queryerrs, queryunits
+# queryvals(db::TagDB, key, ts...) = query(db, key, ts...; extract = "val")
+# queryunits(db::TagDB, key, ts...) = query(db, key, ts...; extract = "val")
+# # queryerrs(db::TagDB, key, ts...) = query(db::TagDB, key, ts...; extract = "unit")

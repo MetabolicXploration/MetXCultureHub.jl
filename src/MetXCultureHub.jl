@@ -7,7 +7,8 @@
 
 module MetXCultureHub
 
-    using MetXBase
+    # using MetXBase
+    using ContextDBs
     using Serialization
 
     import Scratch
@@ -20,9 +21,9 @@ module MetXCultureHub
 
     #! include cultures
     include("cultures/folsomPhysiologicalBiomassElemental2015.jl")
-    include("cultures/kayserMetabolicFluxAnalysis2005.jl")
-    include("cultures/rathCharacterisationCellGrowth2017.jl")
-    include("cultures/seniorRegulationNitrogenMetabolism1975.jl")
+    # include("cultures/kayserMetabolicFluxAnalysis2005.jl")
+    # include("cultures/rathCharacterisationCellGrowth2017.jl")
+    # include("cultures/seniorRegulationNitrogenMetabolism1975.jl")
     
     #! include Utils
 
@@ -34,9 +35,9 @@ module MetXCultureHub
         
         empty!(CULTURES_REG)
         _register_folsomPhysiologicalBiomassElemental2015()
-        _register_kayserMetabolicFluxAnalysis2005()
-        _register_seniorRegulationNitrogenMetabolism1975()
-        _register_rathCharacterisationCellGrowth2017()
+        # _register_kayserMetabolicFluxAnalysis2005()
+        # _register_seniorRegulationNitrogenMetabolism1975()
+        # _register_rathCharacterisationCellGrowth2017()
         
     end
 
