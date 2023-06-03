@@ -2346,97 +2346,142 @@ function _load_rathCharacterisationCellGrowth2017_table_4_11()
 end
 
 ## ------------------------------------------------------------------
-function _load_rathCharacterisationCellGrowth2017()
+_load_rathCharacterisationCellGrowth2017() = @tempcontextdb let
 
     ## -------------------------------------
-    # db
-    db = TagDB()
+    # top context
+    @context! ["rathCharacterisationCellGrowth2017"]
     
     ## -------------------------------------
     # data/raw
-    raw = Dict()
+    raw = Dict{String, Any}()
 
-    # culids
-    raw["culids"] = ["A", "B", "C", "D", "E", "F01", "F02", "F03"]
+    # cul_ids
+    raw["cul_ids"] = ["A", "B", "C", "D", "E", "F01", "F02", "F03"]
 
     # Base Medium 
-    raw["42_MAX_UB"] = _load_rathCharacterisationCellGrowth2017_42_MAX_UB_standard_medium()
+    raw["42_MAX_UB"] = MetXCultureHub._load_rathCharacterisationCellGrowth2017_42_MAX_UB_standard_medium()
 
     # Table 4.10
-    raw["Table4.10"] = _load_rathCharacterisationCellGrowth2017_table_4_10()
+    raw["Table4.10"] = MetXCultureHub._load_rathCharacterisationCellGrowth2017_table_4_10()
     
     # Table 4.11
-    raw["Table4.11"] = _load_rathCharacterisationCellGrowth2017_table_4_11()
+    raw["Table4.11"] = MetXCultureHub._load_rathCharacterisationCellGrowth2017_table_4_11()
 
-    push!(db, "raw" => raw)
+    @commit! ["Raw Data"] raw
 
     ## -------------------------------------
-    # data/api
+    # data
 
-    # TODO: handle errors
-
-    push!(db, "culids";
-        val = raw["culids"]
-    )
-
-    push!(db, "ststids";
-        val = string.('A':'E')
-    )
-
-    # Medium
-    for (i, culid) in enumerate(raw["culids"])
-        
-        # common data
-        for (rawid, dat) in raw["42_MAX_UB"]
-            
-            apiid = string("c_", lowercase(rawid))
-            if dat["unit"] == "µM"
-                # c_met [µM] * 1e-3 = c_met [mM]
-                val = dat["val"] * 1e-3
-                unit = "mM"
-                push!(db, apiid, i, culid; val, unit)
-            end
-
-            if dat["unit"] == "mM"
-                # c_met [µM] * 1e-3 = c_met [mM]
-                val = dat["val"]
-                unit = "mM"
-                push!(db, apiid, i, culid; val, unit)
-            end
-        end
-        
-        # c_met [g/L] / MM_met [g/mol] = c_met [mol/L]
-        # c_met [mol/L] * 1e3 = c_met [mmol/L]
-        unit = "mM"
-        val = raw["42_MAX_UB"]["LAC"]["val"] * 1e3 / 90.08
-        push!(db, "c_lac", i, culid; val, unit)
-
-        # non common data
-        for apiid in ["c_glc", "c_gln", "c_galc"]
-            val = raw["Table4.10"][culid][apiid]["val"]
-            unit = raw["Table4.10"][culid][apiid]["unit"]
-            push!(db, apiid, i, culid; val, unit)
-        end
+    @context! ["Proc Data"]
     
-    end # for culid in culids
+    ## -------------------------------------
+    # data/iters
+    stst_ids = string.('A':'E')
+    cul_ids = raw["cul_ids"]
+    c_ids = Set{String}() # to push
+    q_ids = Set{String}() # to push
+    s_ids = Set{String}() # to push
 
+    ## -------------------------------------
+    # Medium
+    @tempcontext ["Medium"] begin
+
+        for (culidx, culid) in enumerate(raw["cul_ids"])
+
+            @context! [culid, culidx]
+            
+            # common data
+            for (rawid, dat) in raw["42_MAX_UB"]
+                
+                metid = lowercase(rawid)
+                apiid = string("c_", metid)
+                push!(c_ids, apiid)
+                
+                @context! apiid
+                @stage! metid
+
+                if dat["unit"] == "g/L"
+                    # c_met [g/L] / MM g/mol = c_met [M]
+                    # c_met [M] * 1e3 = c_met [mM]
+                    
+                    continue # ignore, it is filled from Table4.10
+                end
+
+                if dat["unit"] == "µM"
+                    # c_met [µM] * 1e-3 = c_met [mM]
+                    @stage! val = dat["val"] * 1e-3
+                    @stage! unit = "mM"
+                    @stage! err = 0.0
+                    @commitcontext!
+                    continue
+                end
+
+                if dat["unit"] == "mM"
+                    # c_met [µM] * 1e-3 = c_met [mM]
+                    @stage! val = dat["val"]
+                    @stage! unit = "mM"
+                    @stage! err = 0.0
+                    @commitcontext!
+                    continue
+                end
+
+            end
+            
+            # c_met [g/L] / MM_met [g/mol] = c_met [mol/L]
+            # c_met [mol/L] * 1e3 = c_met [mmol/L]
+            metid = "lac"
+            apiid = "c_lac"
+            @context! apiid
+            @stage! metid
+            push!(c_ids, apiid)
+            @stage! val = raw["42_MAX_UB"]["LAC"]["val"] * 1e3 / 90.08
+            @stage! unit = "mM"
+            @stage! err = 0.0
+            @commitcontext!
+
+            # non common data
+            for metid in ["glc", "gln", "galc"]
+                @context! apiid = string("c_", metid)
+                @stage! metid
+                push!(c_ids, apiid)
+                @stage! val = raw["Table4.10"][culid][apiid]["val"]
+                @stage! unit = raw["Table4.10"][culid][apiid]["unit"]
+                @stage! err = 0.0
+                @commitcontext!
+            end
+        
+        end # for culid in cul_ids
+
+        c_ids = collect(c_ids)
+    end
+
+
+    ## -------------------------------------
     # Extras
     # Cell density ρ = 0.25 pgCDW/μm³ from Niklas(2011) https://doi.org/10.1007/s00449-010-0502-y.
     # The correlation between dry cell weight, DCW (pg), and cell volume, CV (μm3), determined in a control experiment using the procedure described previously [22], was DCW = 0.25 × CV. 
-    ρ = 0.25 
+    ρ = 0.25 # [pgCDW/μm³]
     
     # from tabel 4.11
-    for (i, culid) in enumerate(raw["culids"])
+    @context! ["Proc Data"]
+    for (culidx, culid) in enumerate(raw["cul_ids"])
+
+        @context! [culid, culidx]
         
         # D [1/h]
-        val = raw["Table4.11"][culid]["D"]["val"]
-        unit = "h^{-1}"
-        push!(db, "D", i, culid; val, unit)
-
+        @context! [apiid = "D"]
+        @stage! val = raw["Table4.11"][culid]["D"]["val"]
+        @stage! unit = "h^{-1}"
+        @stage! err = 0.0
+        @commitcontext!
+        
         # μ [1/h]
-        val = raw["Table4.11"][culid]["μ"]["val"]
-        unit = "h^{-1}"
-        push!(db, "μ", i, culid; val, unit)
+        @context! [apiid = "μ"] 
+        @stage! val = raw["Table4.11"][culid]["μ"]["val"]
+        @stage! unit = "h^{-1}"
+        @stage! err = 0.0
+        @commitcontext!
 
         # X
         # 4/3π (CD/2)^3 [μm^3] * ρ [pgCDW/μm^3] = mcell [pgCDW]
@@ -2445,17 +2490,33 @@ function _load_rathCharacterisationCellGrowth2017()
         # Xv [cell/ mL] * mcell [gCDW/cell] = Xv [gCDW/mL]
         # Xv [gCDW/mL] * 1e3 = Xv [gCDW/L]
         # Total: (4/3) * π * (CD/2)^3 * ρ * 1e-12 * Xv * 1e6 * 1e3
+        @context! [apiid = "CD"] 
         CD = raw["Table4.11"][culid]["CD"]["val"]
+        @stage! val = CD
+        @stage! unit = raw["Table4.11"][culid]["CD"]["unit"]
+        @stage! err = raw["Table4.11"][culid]["CD"]["errs"] # TODO: check this error units
+        @commitcontext!
+        
         
         # Xv
+        @context! [apiid = "Xv"] 
         Xv0 = raw["Table4.11"][culid]["Xv"]["val"]
         Xv = (4/3) * π * (CD/2)^3 * ρ * 1e-12 * Xv0 * 1e6 * 1e3
-        push!(db, "Xv", i, culid; val = Xv, unit = "gCDW L^{-1}")
+        @stage! val = Xv
+        @stage! unit = "gCDW L^{-1}"
+        @stage! err = 0.0
+        @commitcontext!
         
         # Xd
+        @context! [apiid = "Xd"] 
         Xd0 = raw["Table4.11"][culid]["Xd"]["val"]
+        Xd0_rerr = raw["Table4.11"][culid]["Xd"]["errs"] # Relative error
+        
         Xd = (4/3) * π * (CD/2)^3 * ρ * 1e-12 * Xd0 * 1e6 * 1e3
-        push!(db, "Xd", i, culid; val = Xd, unit = "gCDW L^{-1}")
+        @stage! val = Xd
+        @stage! unit = "gCDW L^{-1}"
+        @stage! err = Xd * Xd0_rerr / 100
+        @commitcontext!
 
         # Table4.11
         # Any["qLAC", "qGLN", "yCVv/GLC", "qGAL", "μ", "sALA", "qALA", "qA1AT", "Xv", 
@@ -2464,50 +2525,65 @@ function _load_rathCharacterisationCellGrowth2017()
         # "yCVv/GLN", "yNH4/GLN", "cGAL", "yLAC/GLC", "CD"]
         
         # s_nut
-        for rawid in ["sALA", "sASP", "sGAL", "sGLC", "sGLN", "sGLU", "sLAC", "sNH4", "sPYR"]
+        for metid in ["ALA", "ASP", "GAL", "GLC", "GLN", "GLU", "LAC", "NH4", "PYR"]
+            
+            rawid = string("s", metid)
             s_met = raw["Table4.11"][culid][rawid]["val"]
+            s_met_rerr = raw["Table4.11"][culid][rawid]["errs"]
             @assert raw["Table4.11"][culid][rawid]["unit"] == "mM"
-            apiid = string("s_", lowercase(rawid[2:end]))
-            push!(db, apiid, i, culid; val = s_met, unit = "mM")
-        end
 
-        # sA1AT [mg/L]
-        # TODO: add protein
-        
-        for rawid in ["qLAC", "qGLN", "qGAL", "qALA", "qA1AT", "qNH4", "qASP", "qGLC", "qPYR", "qGLU"]
-            # Fluxes
+            apiid = string("s_", lowercase(metid))
+            @context! apiid 
+            push!(s_ids, apiid)
+            @stage! metid = lowercase(metid)
+            @stage! val = s_met
+            @stage! unit = "mM"
+            @stage! err =  val * s_met_rerr / 100
+            @commitcontext!
+        end
+        s_ids = collect(s_ids)
+
+        # q_met
+        # for rawid in ["qLAC", "qGLN", "qGAL", "qALA", "qA1AT", "qNH4", "qASP", "qGLC", "qPYR", "qGLU"]
+        for metid in ["LAC", "GLN", "GAL", "ALA", "A1AT", "NH4", "ASP", "GLC", "PYR", "GLU"]
+
             #  1 [μL] = 1e9 * [μm^3]
             # q [nmol/ μL L] * 1e-9 = q [nmol/ μm^3 L]
             # q [nmol/ μm^3 L] / ρ [pgCDW/μm^3] = q [nmol/ pgCDW L]
             # q [nmol/ pgCDW L] * 1e-6 = q [mmol/ pgCDW L]
             # q [mmol/ pgCDW L] * 1e12 = q [mmol/ gCDW L]
+            rawid = string("q", metid)
             q0 = raw["Table4.11"][culid][rawid]["val"]
-            val = q0 * 1e-9 * 1e-6 * 1e12 / ρ
-            unit = "mmol gCDW^{-1} L^{-1}"
-            apiid = string("q_", lowercase(rawid[2:end]))
-            push!(db, apiid, i, culid; val, unit)
+            q_rerr = raw["Table4.11"][culid][rawid]["errs"]
+            @context! apiid = string("q_", lowercase(metid))
+            push!(q_ids, apiid)
+            @stage! metid = lowercase(metid)
+            @stage! val = q0 * 1e-9 * 1e-6 * 1e12 / ρ
+            @stage! unit = "mmol gCDW^{-1} L^{-1}"
+            @stage! err = val * q_rerr / 100
+            @commitcontext!
         end
+        q_ids = collect(q_ids)
         
         # qA1AT [pg/ cell d]
         # TODO: add protein
 
     end
 
-    # checking ststs
-    for stst in string.('A':'E')
-        # q_glc = c_glc * D / X (Assuming glucose limitation)
-        c_glc = queryfirst(db, "c_glc", stst; extract = "val")
-        D = queryfirst(db, "D", stst; extract = "val")
-        X = queryfirst(db, "Xv", stst; extract = "val")
-        q_glc = queryfirst(db, "q_glc", stst; extract = "val")
-        
-        @assert isapprox(abs(c_glc * D / X), abs(q_glc); rtol = 12/100)
+    ## -------------------------------------
+    # Iters
+    @context! ["Proc Data"]
+    @tempcontext ["Iters"] begin
+        @stage! stst_ids
+        @stage! cul_ids
+        @stage! c_ids
+        @stage! q_ids
+        @stage! s_ids
     end
 
-    push!(db, "I"; val = eachindex(raw["culids"]))
-
-    return db
-    
+    ## -------------------------------------
+    # return db
+    contextdb()
 end
 
 ## ------------------------------------------------------------------
@@ -2518,3 +2594,170 @@ function _register_rathCharacterisationCellGrowth2017()
         use_cache = false,
     )
 end
+
+## ------------------------------------------------------------------
+# DEPRECATED
+# function _load_rathCharacterisationCellGrowth2017()
+
+#     ## -------------------------------------
+#     # db
+#     db = TagDB()
+    
+#     ## -------------------------------------
+#     # data/raw
+#     raw = Dict()
+
+#     # cul_ids
+#     raw["cul_ids"] = ["A", "B", "C", "D", "E", "F01", "F02", "F03"]
+
+#     # Base Medium 
+#     raw["42_MAX_UB"] = _load_rathCharacterisationCellGrowth2017_42_MAX_UB_standard_medium()
+
+#     # Table 4.10
+#     raw["Table4.10"] = _load_rathCharacterisationCellGrowth2017_table_4_10()
+    
+#     # Table 4.11
+#     raw["Table4.11"] = _load_rathCharacterisationCellGrowth2017_table_4_11()
+
+#     push!(db, "raw" => raw)
+
+#     ## -------------------------------------
+#     # data/api
+
+#     # TODO: handle errors
+
+#     push!(db, "cul_ids";
+#         val = raw["cul_ids"]
+#     )
+
+#     push!(db, "stst_ids";
+#         val = string.('A':'E')
+#     )
+
+#     # Medium
+#     for (i, culid) in enumerate(raw["cul_ids"])
+        
+#         # common data
+#         for (rawid, dat) in raw["42_MAX_UB"]
+            
+#             apiid = string("c_", lowercase(rawid))
+#             if dat["unit"] == "µM"
+#                 # c_met [µM] * 1e-3 = c_met [mM]
+#                 val = dat["val"] * 1e-3
+#                 unit = "mM"
+#                 push!(db, apiid, i, culid; val, unit)
+#             end
+
+#             if dat["unit"] == "mM"
+#                 # c_met [µM] * 1e-3 = c_met [mM]
+#                 val = dat["val"]
+#                 unit = "mM"
+#                 push!(db, apiid, i, culid; val, unit)
+#             end
+#         end
+        
+#         # c_met [g/L] / MM_met [g/mol] = c_met [mol/L]
+#         # c_met [mol/L] * 1e3 = c_met [mmol/L]
+#         unit = "mM"
+#         val = raw["42_MAX_UB"]["LAC"]["val"] * 1e3 / 90.08
+#         push!(db, "c_lac", i, culid; val, unit)
+
+#         # non common data
+#         for apiid in ["c_glc", "c_gln", "c_galc"]
+#             val = raw["Table4.10"][culid][apiid]["val"]
+#             unit = raw["Table4.10"][culid][apiid]["unit"]
+#             push!(db, apiid, i, culid; val, unit)
+#         end
+    
+#     end # for culid in cul_ids
+
+#     # Extras
+#     # Cell density ρ = 0.25 pgCDW/μm³ from Niklas(2011) https://doi.org/10.1007/s00449-010-0502-y.
+#     # The correlation between dry cell weight, DCW (pg), and cell volume, CV (μm3), determined in a control experiment using the procedure described previously [22], was DCW = 0.25 × CV. 
+#     ρ = 0.25 # [pgCDW/μm³]
+    
+#     # from tabel 4.11
+#     for (i, culid) in enumerate(raw["cul_ids"])
+        
+#         # D [1/h]
+#         val = raw["Table4.11"][culid]["D"]["val"]
+#         unit = "h^{-1}"
+#         push!(db, "D", i, culid; val, unit)
+
+#         # μ [1/h]
+#         val = raw["Table4.11"][culid]["μ"]["val"]
+#         unit = "h^{-1}"
+#         push!(db, "μ", i, culid; val, unit)
+
+#         # X
+#         # 4/3π (CD/2)^3 [μm^3] * ρ [pgCDW/μm^3] = mcell [pgCDW]
+#         # mcell [pgCDW] * 1e-12 = mcell [gCDW/cell]
+#         # Xv [E6 cell/ mL] * 1e6 = Xv [cell/ mL]
+#         # Xv [cell/ mL] * mcell [gCDW/cell] = Xv [gCDW/mL]
+#         # Xv [gCDW/mL] * 1e3 = Xv [gCDW/L]
+#         # Total: (4/3) * π * (CD/2)^3 * ρ * 1e-12 * Xv * 1e6 * 1e3
+#         CD = raw["Table4.11"][culid]["CD"]["val"]
+        
+#         # Xv
+#         Xv0 = raw["Table4.11"][culid]["Xv"]["val"]
+#         Xv = (4/3) * π * (CD/2)^3 * ρ * 1e-12 * Xv0 * 1e6 * 1e3
+#         push!(db, "Xv", i, culid; val = Xv, unit = "gCDW L^{-1}")
+        
+#         # Xd
+#         Xd0 = raw["Table4.11"][culid]["Xd"]["val"]
+#         Xd = (4/3) * π * (CD/2)^3 * ρ * 1e-12 * Xd0 * 1e6 * 1e3
+#         push!(db, "Xd", i, culid; val = Xd, unit = "gCDW L^{-1}")
+
+#         # Table4.11
+#         # Any["qLAC", "qGLN", "yCVv/GLC", "qGAL", "μ", "sALA", "qALA", "qA1AT", "Xv", 
+#         # "sASP", "qNH4", "sGAL", "sGLC", "qASP", "D", "qGLC", "qPYR", "sA1AT", "qGLU", 
+#         # "sGLN", "sGLU", "cGLC", "sLAC", "cGLN", "sNH4", "sPYR", "yALA/GLN", "CVv", "Xd", 
+#         # "yCVv/GLN", "yNH4/GLN", "cGAL", "yLAC/GLC", "CD"]
+        
+#         # s_nut
+#         for rawid in ["sALA", "sASP", "sGAL", "sGLC", "sGLN", "sGLU", "sLAC", "sNH4", "sPYR"]
+#             s_met = raw["Table4.11"][culid][rawid]["val"]
+#             @assert raw["Table4.11"][culid][rawid]["unit"] == "mM"
+#             apiid = string("s_", lowercase(rawid[2:end]))
+#             push!(db, apiid, i, culid; val = s_met, unit = "mM")
+#         end
+
+#         # sA1AT [mg/L]
+#         # TODO: add protein
+        
+#         for rawid in ["qLAC", "qGLN", "qGAL", "qALA", "qA1AT", "qNH4", "qASP", "qGLC", "qPYR", "qGLU"]
+#             # Fluxes
+#             #  1 [μL] = 1e9 * [μm^3]
+#             # q [nmol/ μL L] * 1e-9 = q [nmol/ μm^3 L]
+#             # q [nmol/ μm^3 L] / ρ [pgCDW/μm^3] = q [nmol/ pgCDW L]
+#             # q [nmol/ pgCDW L] * 1e-6 = q [mmol/ pgCDW L]
+#             # q [mmol/ pgCDW L] * 1e12 = q [mmol/ gCDW L]
+#             q0 = raw["Table4.11"][culid][rawid]["val"]
+#             val = q0 * 1e-9 * 1e-6 * 1e12 / ρ
+#             unit = "mmol gCDW^{-1} L^{-1}"
+#             apiid = string("q_", lowercase(rawid[2:end]))
+#             push!(db, apiid, i, culid; val, unit)
+#         end
+        
+#         # qA1AT [pg/ cell d]
+#         # TODO: add protein
+
+#     end
+
+#     # checking ststs
+#     for stst in string.('A':'E')
+#         # q_glc = c_glc * D / X (Assuming glucose limitation)
+#         c_glc = queryfirst(db, "c_glc", stst; extract = "val")
+#         D = queryfirst(db, "D", stst; extract = "val")
+#         X = queryfirst(db, "Xv", stst; extract = "val")
+#         q_glc = queryfirst(db, "q_glc", stst; extract = "val")
+        
+#         @assert isapprox(abs(c_glc * D / X), abs(q_glc); rtol = 12/100)
+#     end
+
+#     push!(db, "I"; val = eachindex(raw["cul_ids"]))
+
+#     return db
+    
+# end
+
