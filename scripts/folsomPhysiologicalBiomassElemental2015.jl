@@ -11,7 +11,7 @@ end
 let 
 
     cul = pull_cul("folsomPhysiologicalBiomassElemental2015")
-    Fig1 = cul["data"]["raw"]["Fig1"]
+    Fig1 = queryfirst(cul, "raw"; extract = "Fig1")
 
     ps = Plots.Plot[]
     for (FigX, plot_kwargs) in [
@@ -47,27 +47,27 @@ let
         D = FigX["xval"]
 
         p = plot()
-        scatter!(p, D .- 0.01, FigX["yval"]["C_limmited"]; 
+        scatter!(p, D .- 0.01, FigX["yval"]["C_Limited"]; 
             label = "", m = :circle, c = :black
         )
-        plot!(p, D .- 0.01, FigX["yval"]["C_limmited"]; 
-            yerr = FigX["yerr"]["C_limmited"], 
+        plot!(p, D .- 0.01, FigX["yval"]["C_Limited"]; 
+            yerr = FigX["yerr"]["C_Limited"], 
             label = "", c = :black
         )
 
-        scatter!(p, D, FigX["yval"]["Fe_limmited"]; 
+        scatter!(p, D, FigX["yval"]["Fe_Limited"]; 
             label = "", m = :square, c = :black
         )
-        plot!(p, D, FigX["yval"]["Fe_limmited"]; 
-            yerr = FigX["yerr"]["Fe_limmited"], 
+        plot!(p, D, FigX["yval"]["Fe_Limited"]; 
+            yerr = FigX["yerr"]["Fe_Limited"], 
             label = "", c = :black
         )
 
-        scatter!(p, D .+ 0.01, FigX["yval"]["N_limmited"]; 
+        scatter!(p, D .+ 0.01, FigX["yval"]["N_Limited"]; 
             label = "", m = :utriangle, c = :black
         )
-        plot!(p, D .+ 0.01, FigX["yval"]["N_limmited"]; 
-            yerr = FigX["yerr"]["N_limmited"], 
+        plot!(p, D .+ 0.01, FigX["yval"]["N_Limited"]; 
+            yerr = FigX["yerr"]["N_Limited"], 
             label = "", c = :black
         )
 
