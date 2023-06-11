@@ -2541,7 +2541,6 @@ _load_rathCharacterisationCellGrowth2017() = @tempcontextdb let
             @stage! err =  val * s_met_rerr / 100
             @commitcontext!
         end
-        s_ids = collect(s_ids)
 
         # q_met
         # for rawid in ["qLAC", "qGLN", "qGAL", "qALA", "qA1AT", "qNH4", "qASP", "qGLC", "qPYR", "qGLU"]
@@ -2563,12 +2562,14 @@ _load_rathCharacterisationCellGrowth2017() = @tempcontextdb let
             @stage! err = val * q_rerr / 100
             @commitcontext!
         end
-        q_ids = collect(q_ids)
         
         # qA1AT [pg/ cell d]
         # TODO: add protein
-
+        
     end
+    # collect iters
+    s_ids = collect(s_ids)
+    q_ids = collect(q_ids)
 
     ## -------------------------------------
     # Iters
