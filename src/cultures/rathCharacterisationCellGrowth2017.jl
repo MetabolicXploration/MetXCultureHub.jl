@@ -412,248 +412,248 @@ function _load_rathCharacterisationCellGrowth2017_table_4_10()
 end
 
 ## ------------------------------------------------------------------
-function _load_rathCharacterisationCellGrowth2017_table_4_11()
+function _load_rathCharacterisationCellGrowth2017_table_4_12()
 
-    # Table 4.11: Steady-state values of different parameters from continuous cultivations with varying GLC and GLN 
+    # Table 4.12: Steady-state values of different parameters from continuous cultivations with varying GLC and GLN 
     # feed concentrations and with 3 mM galactose. Shown are the averages and the absolute and relative SDs of 4–7 
     # steady-states values.
 
-    table_4_11 = Dict()
+    table_4_12 = Dict()
 
     # --------------------------------
-    table_4_11["A"] = Dict()
-    table_4_11["A"]["CD"] = Dict(
+    table_4_12["A"] = Dict()
+    table_4_12["A"]["CD"] = Dict(
         "unit" => "μm",
         "err_units" => "%",
         "val" => 17.1,
         "errs" => 1.5,
     )
 
-    table_4_11["A"]["CVv"] = Dict(
+    table_4_12["A"]["CVv"] = Dict(
         "unit" => "μL/ mL",
         "err_units" => "%",
         "val" => 6.56,
         "errs" => 7.4,
     )
 
-    table_4_11["A"]["D"] = Dict(
+    table_4_12["A"]["D"] = Dict(
         "unit" => "1/ hr",
         "err_units" => "%",
         "val" => 0.014,
         "errs" => 0.0,
     )
 
-    table_4_11["A"]["Xd"] = Dict(
+    table_4_12["A"]["Xd"] = Dict(
         "unit" => "1e6 cells/ mL",
         "err_units" => "%",
         "val" => 0.21,
         "errs" => 15.2,
     )
 
-    table_4_11["A"]["Xv"] = Dict(
+    table_4_12["A"]["Xv"] = Dict(
         "unit" => "1e6 cells/ mL",
         "err_units" => "%",
         "val" => 2.49,
         "errs" => 4.0,
     )
 
-    table_4_11["A"]["cGAL"] = Dict(
+    table_4_12["A"]["cGAL"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 3.0,
         "errs" => 0.0,
     )
 
-    table_4_11["A"]["cGLC"] = Dict(
+    table_4_12["A"]["cGLC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 10.0,
         "errs" => 0.0,
     )
 
-    table_4_11["A"]["cGLN"] = Dict(
+    table_4_12["A"]["cGLN"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 5.0,
         "errs" => 0.0,
     )
 
-    table_4_11["A"]["qA1AT"] = Dict(
+    table_4_12["A"]["qA1AT"] = Dict(
         "unit" => "pg/ cell d",
         "err_units" => "%",
         "val" => -7.87,
         "errs" => 2.4,
     )
 
-    table_4_11["A"]["qALA"] = Dict(
+    table_4_12["A"]["qALA"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -2.14,
         "errs" => 12.8,
     )
 
-    table_4_11["A"]["qASP"] = Dict(
+    table_4_12["A"]["qASP"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 1.19,
         "errs" => 15.9,
     )
 
-    table_4_11["A"]["qGAL"] = Dict(
+    table_4_12["A"]["qGAL"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 1.94,
         "errs" => 10.8,
     )
 
-    table_4_11["A"]["qGLC"] = Dict(
+    table_4_12["A"]["qGLC"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 21.43,
         "errs" => 7.3,
     )
 
-    table_4_11["A"]["qGLN"] = Dict(
+    table_4_12["A"]["qGLN"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 9.1,
         "errs" => 9.0,
     )
 
-    table_4_11["A"]["qGLU"] = Dict(
+    table_4_12["A"]["qGLU"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -1.31,
         "errs" => 14.0,
     )
 
-    table_4_11["A"]["qLAC"] = Dict(
+    table_4_12["A"]["qLAC"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -4.43,
         "errs" => 68.8,
     )
 
-    table_4_11["A"]["qNH4"] = Dict(
+    table_4_12["A"]["qNH4"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -7.19,
         "errs" => 9.3,
     )
 
-    table_4_11["A"]["qPYR"] = Dict(
+    table_4_12["A"]["qPYR"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 5.82,
         "errs" => 8.9,
     )
 
-    table_4_11["A"]["sA1AT"] = Dict(
+    table_4_12["A"]["sA1AT"] = Dict(
         "unit" => "mg/ L",
         "err_units" => "%",
         "val" => 57.9,
         "errs" => 5.2,
     )
 
-    table_4_11["A"]["sALA"] = Dict(
+    table_4_12["A"]["sALA"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.4,
         "errs" => 6.4,
     )
 
-    table_4_11["A"]["sASP"] = Dict(
+    table_4_12["A"]["sASP"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.6,
         "errs" => 3.9,
     )
 
-    table_4_11["A"]["sGAL"] = Dict(
+    table_4_12["A"]["sGAL"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.9,
         "errs" => 4.5,
     )
 
-    table_4_11["A"]["sGLC"] = Dict(
+    table_4_12["A"]["sGLC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["A"]["sGLN"] = Dict(
+    table_4_12["A"]["sGLN"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.8,
         "errs" => 10.0,
     )
 
-    table_4_11["A"]["sGLU"] = Dict(
+    table_4_12["A"]["sGLU"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.2,
         "errs" => 6.2,
     )
 
-    table_4_11["A"]["sLAC"] = Dict(
+    table_4_12["A"]["sLAC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 2.1,
         "errs" => 72.3,
     )
 
-    table_4_11["A"]["sNH4"] = Dict(
+    table_4_12["A"]["sNH4"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 3.4,
         "errs" => 6.7,
     )
 
-    table_4_11["A"]["sPYR"] = Dict(
+    table_4_12["A"]["sPYR"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.2,
         "errs" => 1.8,
     )
 
-    table_4_11["A"]["yALA/GLN"] = Dict(
+    table_4_12["A"]["yALA/GLN"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 0.2,
         "errs" => 9.5,
     )
 
-    table_4_11["A"]["yCVv/GLC"] = Dict(
+    table_4_12["A"]["yCVv/GLC"] = Dict(
         "unit" => "μL/ mmol",
         "err_units" => "%",
         "val" => 711.0,
         "errs" => 6.6,
     )
 
-    table_4_11["A"]["yCVv/GLN"] = Dict(
+    table_4_12["A"]["yCVv/GLN"] = Dict(
         "unit" => "μL/ mmol",
         "err_units" => "%",
         "val" => 1679.0,
         "errs" => 8.3,
     )
 
-    table_4_11["A"]["yLAC/GLC"] = Dict(
+    table_4_12["A"]["yLAC/GLC"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 0.2,
         "errs" => 70.0,
     )
 
-    table_4_11["A"]["yNH4/GLN"] = Dict(
+    table_4_12["A"]["yNH4/GLN"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 0.8,
         "errs" => 6.6,
     )
 
-    table_4_11["A"]["μ"] = Dict(
+    table_4_12["A"]["μ"] = Dict(
         "unit" => "1/ hr",
         "err_units" => "%",
         "val" => 0.0152,
@@ -661,239 +661,239 @@ function _load_rathCharacterisationCellGrowth2017_table_4_11()
     )
 
     # --------------------------------
-    table_4_11["B"] = Dict()
-    table_4_11["B"]["CD"] = Dict(
+    table_4_12["B"] = Dict()
+    table_4_12["B"]["CD"] = Dict(
         "unit" => "μm",
         "err_units" => "%",
         "val" => 17.2,
         "errs" => 1.1,
     )
 
-    table_4_11["B"]["CVv"] = Dict(
+    table_4_12["B"]["CVv"] = Dict(
         "unit" => "μL/ mL",
         "err_units" => "%",
         "val" => 7.19,
         "errs" => 9.4,
     )
 
-    table_4_11["B"]["D"] = Dict(
+    table_4_12["B"]["D"] = Dict(
         "unit" => "1/ hr",
         "err_units" => "%",
         "val" => 0.012,
         "errs" => 0.0,
     )
 
-    table_4_11["B"]["Xd"] = Dict(
+    table_4_12["B"]["Xd"] = Dict(
         "unit" => "1e6 cells/ mL",
         "err_units" => "%",
         "val" => 0.291,
         "errs" => 7.4,
     )
 
-    table_4_11["B"]["Xv"] = Dict(
+    table_4_12["B"]["Xv"] = Dict(
         "unit" => "1e6 cells/ mL",
         "err_units" => "%",
         "val" => 2.745,
         "errs" => 4.3,
     )
 
-    table_4_11["B"]["cGAL"] = Dict(
+    table_4_12["B"]["cGAL"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 3.0,
         "errs" => 0.0,
     )
 
-    table_4_11["B"]["cGLC"] = Dict(
+    table_4_12["B"]["cGLC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 10.0,
         "errs" => 0.0,
     )
 
-    table_4_11["B"]["cGLN"] = Dict(
+    table_4_12["B"]["cGLN"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 5.0,
         "errs" => 0.0,
     )
 
-    table_4_11["B"]["qA1AT"] = Dict(
+    table_4_12["B"]["qA1AT"] = Dict(
         "unit" => "pg/ cell d",
         "err_units" => "%",
         "val" => -8.54,
         "errs" => 15.7,
     )
 
-    table_4_11["B"]["qALA"] = Dict(
+    table_4_12["B"]["qALA"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 0.39,
         "errs" => 6.7,
     )
 
-    table_4_11["B"]["qASP"] = Dict(
+    table_4_12["B"]["qASP"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 1.2,
         "errs" => 8.1,
     )
 
-    table_4_11["B"]["qGAL"] = Dict(
+    table_4_12["B"]["qGAL"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 1.55,
         "errs" => 14.3,
     )
 
-    table_4_11["B"]["qGLC"] = Dict(
+    table_4_12["B"]["qGLC"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 16.17,
         "errs" => 10.9,
     )
 
-    table_4_11["B"]["qGLN"] = Dict(
+    table_4_12["B"]["qGLN"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 7.55,
         "errs" => 9.5,
     )
 
-    table_4_11["B"]["qGLU"] = Dict(
+    table_4_12["B"]["qGLU"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -1.05,
         "errs" => 9.4,
     )
 
-    table_4_11["B"]["qLAC"] = Dict(
+    table_4_12["B"]["qLAC"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["B"]["qNH4"] = Dict(
+    table_4_12["B"]["qNH4"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -9.21,
         "errs" => 10.5,
     )
 
-    table_4_11["B"]["qPYR"] = Dict(
+    table_4_12["B"]["qPYR"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 4.7,
         "errs" => 12.1,
     )
 
-    table_4_11["B"]["sA1AT"] = Dict(
+    table_4_12["B"]["sA1AT"] = Dict(
         "unit" => "mg/ L",
         "err_units" => "%",
         "val" => 81.0,
         "errs" => 11.4,
     )
 
-    table_4_11["B"]["sALA"] = Dict(
+    table_4_12["B"]["sALA"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.2,
         "errs" => 13.8,
     )
 
-    table_4_11["B"]["sASP"] = Dict(
+    table_4_12["B"]["sASP"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.5,
         "errs" => 3.2,
     )
 
-    table_4_11["B"]["sGAL"] = Dict(
+    table_4_12["B"]["sGAL"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.9,
         "errs" => 2.9,
     )
 
-    table_4_11["B"]["sGLC"] = Dict(
+    table_4_12["B"]["sGLC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["B"]["sGLN"] = Dict(
+    table_4_12["B"]["sGLN"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.5,
         "errs" => 3.5,
     )
 
-    table_4_11["B"]["sGLU"] = Dict(
+    table_4_12["B"]["sGLU"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.3,
         "errs" => 0.5,
     )
 
-    table_4_11["B"]["sLAC"] = Dict(
+    table_4_12["B"]["sLAC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["B"]["sNH4"] = Dict(
+    table_4_12["B"]["sNH4"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 5.5,
         "errs" => 3.5,
     )
 
-    table_4_11["B"]["sPYR"] = Dict(
+    table_4_12["B"]["sPYR"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.1,
         "errs" => 3.2,
     )
 
-    table_4_11["B"]["yALA/GLN"] = Dict(
+    table_4_12["B"]["yALA/GLN"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["B"]["yCVv/GLC"] = Dict(
+    table_4_12["B"]["yCVv/GLC"] = Dict(
         "unit" => "μL/ mmol",
         "err_units" => "%",
         "val" => 827.0,
         "errs" => 9.4,
     )
 
-    table_4_11["B"]["yCVv/GLN"] = Dict(
+    table_4_12["B"]["yCVv/GLN"] = Dict(
         "unit" => "μL/ mmol",
         "err_units" => "%",
         "val" => 1770.0,
         "errs" => 8.2,
     )
 
-    table_4_11["B"]["yLAC/GLC"] = Dict(
+    table_4_12["B"]["yLAC/GLC"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["B"]["yNH4/GLN"] = Dict(
+    table_4_12["B"]["yNH4/GLN"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 1.2,
         "errs" => 3.6,
     )
 
-    table_4_11["B"]["μ"] = Dict(
+    table_4_12["B"]["μ"] = Dict(
         "unit" => "1/ hr",
         "err_units" => "%",
         "val" => 0.0133,
@@ -901,239 +901,239 @@ function _load_rathCharacterisationCellGrowth2017_table_4_11()
     )
 
     # --------------------------------
-    table_4_11["C"] = Dict()
-    table_4_11["C"]["CD"] = Dict(
+    table_4_12["C"] = Dict()
+    table_4_12["C"]["CD"] = Dict(
         "unit" => "μm",
         "err_units" => "%",
         "val" => 16.3,
         "errs" => 1.5,
     )
 
-    table_4_11["C"]["CVv"] = Dict(
+    table_4_12["C"]["CVv"] = Dict(
         "unit" => "μL/ mL",
         "err_units" => "%",
         "val" => 6.23,
         "errs" => 3.4,
     )
 
-    table_4_11["C"]["D"] = Dict(
+    table_4_12["C"]["D"] = Dict(
         "unit" => "1/ hr",
         "err_units" => "%",
         "val" => 0.01,
         "errs" => 0.0,
     )
 
-    table_4_11["C"]["Xd"] = Dict(
+    table_4_12["C"]["Xd"] = Dict(
         "unit" => "1e6 cells/ mL",
         "err_units" => "%",
         "val" => 0.378,
         "errs" => 12.5,
     )
 
-    table_4_11["C"]["Xv"] = Dict(
+    table_4_12["C"]["Xv"] = Dict(
         "unit" => "1e6 cells/ mL",
         "err_units" => "%",
         "val" => 2.735,
         "errs" => 2.0,
     )
 
-    table_4_11["C"]["cGAL"] = Dict(
+    table_4_12["C"]["cGAL"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 3.0,
         "errs" => 0.0,
     )
 
-    table_4_11["C"]["cGLC"] = Dict(
+    table_4_12["C"]["cGLC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 10.0,
         "errs" => 0.0,
     )
 
-    table_4_11["C"]["cGLN"] = Dict(
+    table_4_12["C"]["cGLN"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 5.0,
         "errs" => 0.0,
     )
 
-    table_4_11["C"]["qA1AT"] = Dict(
+    table_4_12["C"]["qA1AT"] = Dict(
         "unit" => "pg/ cell d",
         "err_units" => "%",
         "val" => -6.33,
         "errs" => 3.0,
     )
 
-    table_4_11["C"]["qALA"] = Dict(
+    table_4_12["C"]["qALA"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 0.54,
         "errs" => 5.9,
     )
 
-    table_4_11["C"]["qASP"] = Dict(
+    table_4_12["C"]["qASP"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 1.49,
         "errs" => 3.5,
     )
 
-    table_4_11["C"]["qGAL"] = Dict(
+    table_4_12["C"]["qGAL"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 2.46,
         "errs" => 51.1,
     )
 
-    table_4_11["C"]["qGLC"] = Dict(
+    table_4_12["C"]["qGLC"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 15.13,
         "errs" => 3.4,
     )
 
-    table_4_11["C"]["qGLN"] = Dict(
+    table_4_12["C"]["qGLN"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 7.12,
         "errs" => 4.3,
     )
 
-    table_4_11["C"]["qGLU"] = Dict(
+    table_4_12["C"]["qGLU"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -0.52,
         "errs" => 17.9,
     )
 
-    table_4_11["C"]["qLAC"] = Dict(
+    table_4_12["C"]["qLAC"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["C"]["qNH4"] = Dict(
+    table_4_12["C"]["qNH4"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -9.55,
         "errs" => 3.2,
     )
 
-    table_4_11["C"]["qPYR"] = Dict(
+    table_4_12["C"]["qPYR"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 4.48,
         "errs" => 2.4,
     )
 
-    table_4_11["C"]["sA1AT"] = Dict(
+    table_4_12["C"]["sA1AT"] = Dict(
         "unit" => "mg/ L",
         "err_units" => "%",
         "val" => 72.1,
         "errs" => 1.5,
     )
 
-    table_4_11["C"]["sALA"] = Dict(
+    table_4_12["C"]["sALA"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.1,
         "errs" => 14.2,
     )
 
-    table_4_11["C"]["sASP"] = Dict(
+    table_4_12["C"]["sASP"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.3,
         "errs" => 1.2,
     )
 
-    table_4_11["C"]["sGAL"] = Dict(
+    table_4_12["C"]["sGAL"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.7,
         "errs" => 0.9,
     )
 
-    table_4_11["C"]["sGLC"] = Dict(
+    table_4_12["C"]["sGLC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["C"]["sGLN"] = Dict(
+    table_4_12["C"]["sGLN"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.6,
         "errs" => 7.3,
     )
 
-    table_4_11["C"]["sGLU"] = Dict(
+    table_4_12["C"]["sGLU"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.0,
         "errs" => 5.0,
     )
 
-    table_4_11["C"]["sLAC"] = Dict(
+    table_4_12["C"]["sLAC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["C"]["sNH4"] = Dict(
+    table_4_12["C"]["sNH4"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 5.9,
         "errs" => 1.5,
     )
 
-    table_4_11["C"]["sPYR"] = Dict(
+    table_4_12["C"]["sPYR"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.1,
         "errs" => 3.2,
     )
 
-    table_4_11["C"]["yALA/GLN"] = Dict(
+    table_4_12["C"]["yALA/GLN"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["C"]["yCVv/GLC"] = Dict(
+    table_4_12["C"]["yCVv/GLC"] = Dict(
         "unit" => "μL/ mmol",
         "err_units" => "%",
         "val" => 753.0,
         "errs" => 2.3,
     )
 
-    table_4_11["C"]["yCVv/GLN"] = Dict(
+    table_4_12["C"]["yCVv/GLN"] = Dict(
         "unit" => "μL/ mmol",
         "err_units" => "%",
         "val" => 1601.0,
         "errs" => 3.3,
     )
 
-    table_4_11["C"]["yLAC/GLC"] = Dict(
+    table_4_12["C"]["yLAC/GLC"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["C"]["yNH4/GLN"] = Dict(
+    table_4_12["C"]["yNH4/GLN"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 1.3,
         "errs" => 1.9,
     )
 
-    table_4_11["C"]["μ"] = Dict(
+    table_4_12["C"]["μ"] = Dict(
         "unit" => "1/ hr",
         "err_units" => "%",
         "val" => 0.0114,
@@ -1141,239 +1141,239 @@ function _load_rathCharacterisationCellGrowth2017_table_4_11()
     )
 
     # --------------------------------
-    table_4_11["D"] = Dict()
-    table_4_11["D"]["CD"] = Dict(
+    table_4_12["D"] = Dict()
+    table_4_12["D"]["CD"] = Dict(
         "unit" => "μm",
         "err_units" => "%",
         "val" => 17.7,
         "errs" => 1.5,
     )
 
-    table_4_11["D"]["CVv"] = Dict(
+    table_4_12["D"]["CVv"] = Dict(
         "unit" => "μL/ mL",
         "err_units" => "%",
         "val" => 4.33,
         "errs" => 6.3,
     )
 
-    table_4_11["D"]["D"] = Dict(
+    table_4_12["D"]["D"] = Dict(
         "unit" => "1/ hr",
         "err_units" => "%",
         "val" => 0.015,
         "errs" => 0.0,
     )
 
-    table_4_11["D"]["Xd"] = Dict(
+    table_4_12["D"]["Xd"] = Dict(
         "unit" => "1e6 cells/ mL",
         "err_units" => "%",
         "val" => 0.089,
         "errs" => 6.5,
     )
 
-    table_4_11["D"]["Xv"] = Dict(
+    table_4_12["D"]["Xv"] = Dict(
         "unit" => "1e6 cells/ mL",
         "err_units" => "%",
         "val" => 1.489,
         "errs" => 2.9,
     )
 
-    table_4_11["D"]["cGAL"] = Dict(
+    table_4_12["D"]["cGAL"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 3.0,
         "errs" => 0.0,
     )
 
-    table_4_11["D"]["cGLC"] = Dict(
+    table_4_12["D"]["cGLC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 10.0,
         "errs" => 0.0,
     )
 
-    table_4_11["D"]["cGLN"] = Dict(
+    table_4_12["D"]["cGLN"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 2.0,
         "errs" => 0.0,
     )
 
-    table_4_11["D"]["qA1AT"] = Dict(
+    table_4_12["D"]["qA1AT"] = Dict(
         "unit" => "pg/ cell d",
         "err_units" => "%",
         "val" => -12.0,
         "errs" => 4.9,
     )
 
-    table_4_11["D"]["qALA"] = Dict(
+    table_4_12["D"]["qALA"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 0.1,
         "errs" => 127.8,
     )
 
-    table_4_11["D"]["qASP"] = Dict(
+    table_4_12["D"]["qASP"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -0.41,
         "errs" => 150.7,
     )
 
-    table_4_11["D"]["qGAL"] = Dict(
+    table_4_12["D"]["qGAL"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 1.92,
         "errs" => 12.3,
     )
 
-    table_4_11["D"]["qGLC"] = Dict(
+    table_4_12["D"]["qGLC"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 33.05,
         "errs" => 6.6,
     )
 
-    table_4_11["D"]["qGLN"] = Dict(
+    table_4_12["D"]["qGLN"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 4.4,
         "errs" => 6.4,
     )
 
-    table_4_11["D"]["qGLU"] = Dict(
+    table_4_12["D"]["qGLU"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -0.71,
         "errs" => 43.5,
     )
 
-    table_4_11["D"]["qLAC"] = Dict(
+    table_4_12["D"]["qLAC"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -41.0,
         "errs" => 10.0,
     )
 
-    table_4_11["D"]["qNH4"] = Dict(
+    table_4_12["D"]["qNH4"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -4.48,
         "errs" => 7.8,
     )
 
-    table_4_11["D"]["qPYR"] = Dict(
+    table_4_12["D"]["qPYR"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 9.1,
         "errs" => 7.1,
     )
 
-    table_4_11["D"]["sA1AT"] = Dict(
+    table_4_12["D"]["sA1AT"] = Dict(
         "unit" => "mg/ L",
         "err_units" => "%",
         "val" => 50.9,
         "errs" => 2.9,
     )
 
-    table_4_11["D"]["sALA"] = Dict(
+    table_4_12["D"]["sALA"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.3,
         "errs" => 8.9,
     )
 
-    table_4_11["D"]["sASP"] = Dict(
+    table_4_12["D"]["sASP"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 2.4,
         "errs" => 7.1,
     )
 
-    table_4_11["D"]["sGAL"] = Dict(
+    table_4_12["D"]["sGAL"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 2.1,
         "errs" => 2.5,
     )
 
-    table_4_11["D"]["sGLC"] = Dict(
+    table_4_12["D"]["sGLC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["D"]["sGLN"] = Dict(
+    table_4_12["D"]["sGLN"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.5,
         "errs" => 11.1,
     )
 
-    table_4_11["D"]["sGLU"] = Dict(
+    table_4_12["D"]["sGLU"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.7,
         "errs" => 12.9,
     )
 
-    table_4_11["D"]["sLAC"] = Dict(
+    table_4_12["D"]["sLAC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 12.5,
         "errs" => 5.0,
     )
 
-    table_4_11["D"]["sNH4"] = Dict(
+    table_4_12["D"]["sNH4"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.5,
         "errs" => 2.1,
     )
 
-    table_4_11["D"]["sPYR"] = Dict(
+    table_4_12["D"]["sPYR"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.3,
         "errs" => 12.6,
     )
 
-    table_4_11["D"]["yALA/GLN"] = Dict(
+    table_4_12["D"]["yALA/GLN"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["D"]["yCVv/GLC"] = Dict(
+    table_4_12["D"]["yCVv/GLC"] = Dict(
         "unit" => "μL/ mmol",
         "err_units" => "%",
         "val" => 482.0,
         "errs" => 6.3,
     )
 
-    table_4_11["D"]["yCVv/GLN"] = Dict(
+    table_4_12["D"]["yCVv/GLN"] = Dict(
         "unit" => "μL/ mmol",
         "err_units" => "%",
         "val" => 3617.0,
         "errs" => 6.0,
     )
 
-    table_4_11["D"]["yLAC/GLC"] = Dict(
+    table_4_12["D"]["yLAC/GLC"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 1.2,
         "errs" => 5.3,
     )
 
-    table_4_11["D"]["yNH4/GLN"] = Dict(
+    table_4_12["D"]["yNH4/GLN"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 1.0,
         "errs" => 4.9,
     )
 
-    table_4_11["D"]["μ"] = Dict(
+    table_4_12["D"]["μ"] = Dict(
         "unit" => "1/ hr",
         "err_units" => "%",
         "val" => 0.0159,
@@ -1381,239 +1381,239 @@ function _load_rathCharacterisationCellGrowth2017_table_4_11()
     )
 
     # --------------------------------
-    table_4_11["E"] = Dict()
-    table_4_11["E"]["CD"] = Dict(
+    table_4_12["E"] = Dict()
+    table_4_12["E"]["CD"] = Dict(
         "unit" => "μm",
         "err_units" => "%",
         "val" => 18.7,
         "errs" => 1.1,
     )
 
-    table_4_11["E"]["CVv"] = Dict(
+    table_4_12["E"]["CVv"] = Dict(
         "unit" => "μL/ mL",
         "err_units" => "%",
         "val" => 3.4,
         "errs" => 4.9,
     )
 
-    table_4_11["E"]["D"] = Dict(
+    table_4_12["E"]["D"] = Dict(
         "unit" => "1/ hr",
         "err_units" => "%",
         "val" => 0.0133,
         "errs" => 0.0,
     )
 
-    table_4_11["E"]["Xd"] = Dict(
+    table_4_12["E"]["Xd"] = Dict(
         "unit" => "1e6 cells/ mL",
         "err_units" => "%",
         "val" => 0.075,
         "errs" => 18.5,
     )
 
-    table_4_11["E"]["Xv"] = Dict(
+    table_4_12["E"]["Xv"] = Dict(
         "unit" => "1e6 cells/ mL",
         "err_units" => "%",
         "val" => 0.998,
         "errs" => 2.5,
     )
 
-    table_4_11["E"]["cGAL"] = Dict(
+    table_4_12["E"]["cGAL"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 3.0,
         "errs" => 0.0,
     )
 
-    table_4_11["E"]["cGLC"] = Dict(
+    table_4_12["E"]["cGLC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 8.0,
         "errs" => 0.0,
     )
 
-    table_4_11["E"]["cGLN"] = Dict(
+    table_4_12["E"]["cGLN"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 2.0,
         "errs" => 0.0,
     )
 
-    table_4_11["E"]["qA1AT"] = Dict(
+    table_4_12["E"]["qA1AT"] = Dict(
         "unit" => "pg/ cell d",
         "err_units" => "%",
         "val" => -14.29,
         "errs" => 7.5,
     )
 
-    table_4_11["E"]["qALA"] = Dict(
+    table_4_12["E"]["qALA"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -2.81,
         "errs" => 9.4,
     )
 
-    table_4_11["E"]["qASP"] = Dict(
+    table_4_12["E"]["qASP"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -2.16,
         "errs" => 53.1,
     )
 
-    table_4_11["E"]["qGAL"] = Dict(
+    table_4_12["E"]["qGAL"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 1.61,
         "errs" => 23.3,
     )
 
-    table_4_11["E"]["qGLC"] = Dict(
+    table_4_12["E"]["qGLC"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 27.64,
         "errs" => 4.8,
     )
 
-    table_4_11["E"]["qGLN"] = Dict(
+    table_4_12["E"]["qGLN"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 5.07,
         "errs" => 8.1,
     )
 
-    table_4_11["E"]["qGLU"] = Dict(
+    table_4_12["E"]["qGLU"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -0.88,
         "errs" => 43.8,
     )
 
-    table_4_11["E"]["qLAC"] = Dict(
+    table_4_12["E"]["qLAC"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -49.68,
         "errs" => 2.6,
     )
 
-    table_4_11["E"]["qNH4"] = Dict(
+    table_4_12["E"]["qNH4"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -5.66,
         "errs" => 5.9,
     )
 
-    table_4_11["E"]["qPYR"] = Dict(
+    table_4_12["E"]["qPYR"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 7.04,
         "errs" => 7.8,
     )
 
-    table_4_11["E"]["sA1AT"] = Dict(
+    table_4_12["E"]["sA1AT"] = Dict(
         "unit" => "mg/ L",
         "err_units" => "%",
         "val" => 44.6,
         "errs" => 6.2,
     )
 
-    table_4_11["E"]["sALA"] = Dict(
+    table_4_12["E"]["sALA"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.0,
         "errs" => 5.2,
     )
 
-    table_4_11["E"]["sASP"] = Dict(
+    table_4_12["E"]["sASP"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 2.8,
         "errs" => 10.8,
     )
 
-    table_4_11["E"]["sGAL"] = Dict(
+    table_4_12["E"]["sGAL"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 2.4,
         "errs" => 3.2,
     )
 
-    table_4_11["E"]["sGLC"] = Dict(
+    table_4_12["E"]["sGLC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["E"]["sGLN"] = Dict(
+    table_4_12["E"]["sGLN"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.5,
         "errs" => 13.7,
     )
 
-    table_4_11["E"]["sGLU"] = Dict(
+    table_4_12["E"]["sGLU"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.8,
         "errs" => 12.8,
     )
 
-    table_4_11["E"]["sLAC"] = Dict(
+    table_4_12["E"]["sLAC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 12.7,
         "errs" => 3.0,
     )
 
-    table_4_11["E"]["sNH4"] = Dict(
+    table_4_12["E"]["sNH4"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.6,
         "errs" => 1.6,
     )
 
-    table_4_11["E"]["sPYR"] = Dict(
+    table_4_12["E"]["sPYR"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.1,
         "errs" => 5.3,
     )
 
-    table_4_11["E"]["yALA/GLN"] = Dict(
+    table_4_12["E"]["yALA/GLN"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 0.6,
         "errs" => 7.9,
     )
 
-    table_4_11["E"]["yCVv/GLC"] = Dict(
+    table_4_12["E"]["yCVv/GLC"] = Dict(
         "unit" => "μL/ mmol",
         "err_units" => "%",
         "val" => 518.0,
         "errs" => 3.5,
     )
 
-    table_4_11["E"]["yCVv/GLN"] = Dict(
+    table_4_12["E"]["yCVv/GLN"] = Dict(
         "unit" => "μL/ mmol",
         "err_units" => "%",
         "val" => 2837.0,
         "errs" => 7.1,
     )
 
-    table_4_11["E"]["yLAC/GLC"] = Dict(
+    table_4_12["E"]["yLAC/GLC"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 1.8,
         "errs" => 3.2,
     )
 
-    table_4_11["E"]["yNH4/GLN"] = Dict(
+    table_4_12["E"]["yNH4/GLN"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 1.1,
         "errs" => 4.8,
     )
 
-    table_4_11["E"]["μ"] = Dict(
+    table_4_12["E"]["μ"] = Dict(
         "unit" => "1/ hr",
         "err_units" => "%",
         "val" => 0.0143,
@@ -1621,239 +1621,239 @@ function _load_rathCharacterisationCellGrowth2017_table_4_11()
     )
 
     # --------------------------------
-    table_4_11["F01"] = Dict()
-    table_4_11["F01"]["CD"] = Dict(
+    table_4_12["F01"] = Dict()
+    table_4_12["F01"]["CD"] = Dict(
         "unit" => "μm",
         "err_units" => "%",
         "val" => 17.2,
         "errs" => 1.9,
     )
 
-    table_4_11["F01"]["CVv"] = Dict(
+    table_4_12["F01"]["CVv"] = Dict(
         "unit" => "μL/ mL",
         "err_units" => "%",
         "val" => 4.54,
         "errs" => 5.2,
     )
 
-    table_4_11["F01"]["D"] = Dict(
+    table_4_12["F01"]["D"] = Dict(
         "unit" => "1/ hr",
         "err_units" => "%",
         "val" => 0.015,
         "errs" => 0.0,
     )
 
-    table_4_11["F01"]["Xd"] = Dict(
+    table_4_12["F01"]["Xd"] = Dict(
         "unit" => "1e6 cells/ mL",
         "err_units" => "%",
         "val" => 0.081,
         "errs" => 5.1,
     )
 
-    table_4_11["F01"]["Xv"] = Dict(
+    table_4_12["F01"]["Xv"] = Dict(
         "unit" => "1e6 cells/ mL",
         "err_units" => "%",
         "val" => 1.701,
         "errs" => 1.3,
     )
 
-    table_4_11["F01"]["cGAL"] = Dict(
+    table_4_12["F01"]["cGAL"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F01"]["cGLC"] = Dict(
+    table_4_12["F01"]["cGLC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 10.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F01"]["cGLN"] = Dict(
+    table_4_12["F01"]["cGLN"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 5.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F01"]["qA1AT"] = Dict(
+    table_4_12["F01"]["qA1AT"] = Dict(
         "unit" => "pg/ cell d",
         "err_units" => "%",
         "val" => -9.2,
         "errs" => 2.7,
     )
 
-    table_4_11["F01"]["qALA"] = Dict(
+    table_4_12["F01"]["qALA"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -1.99,
         "errs" => 16.3,
     )
 
-    table_4_11["F01"]["qASP"] = Dict(
+    table_4_12["F01"]["qASP"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 1.65,
         "errs" => 39.0,
     )
 
-    table_4_11["F01"]["qGAL"] = Dict(
+    table_4_12["F01"]["qGAL"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F01"]["qGLC"] = Dict(
+    table_4_12["F01"]["qGLC"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 24.9,
         "errs" => 4.3,
     )
 
-    table_4_11["F01"]["qGLN"] = Dict(
+    table_4_12["F01"]["qGLN"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 8.4,
         "errs" => 12.7,
     )
 
-    table_4_11["F01"]["qGLU"] = Dict(
+    table_4_12["F01"]["qGLU"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -0.7,
         "errs" => 20.4,
     )
 
-    table_4_11["F01"]["qLAC"] = Dict(
+    table_4_12["F01"]["qLAC"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -22.6,
         "errs" => 5.6,
     )
 
-    table_4_11["F01"]["qNH4"] = Dict(
+    table_4_12["F01"]["qNH4"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -10.9,
         "errs" => 10.3,
     )
 
-    table_4_11["F01"]["qPYR"] = Dict(
+    table_4_12["F01"]["qPYR"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 4.5,
         "errs" => 6.9,
     )
 
-    table_4_11["F01"]["sA1AT"] = Dict(
+    table_4_12["F01"]["sA1AT"] = Dict(
         "unit" => "mg/ L",
         "err_units" => "%",
         "val" => 44.0,
         "errs" => 3.9,
     )
 
-    table_4_11["F01"]["sALA"] = Dict(
+    table_4_12["F01"]["sALA"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.9,
         "errs" => 8.2,
     )
 
-    table_4_11["F01"]["sASP"] = Dict(
+    table_4_12["F01"]["sASP"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.9,
         "errs" => 10.8,
     )
 
-    table_4_11["F01"]["sGAL"] = Dict(
+    table_4_12["F01"]["sGAL"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F01"]["sGLC"] = Dict(
+    table_4_12["F01"]["sGLC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F01"]["sGLN"] = Dict(
+    table_4_12["F01"]["sGLN"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.9,
         "errs" => 9.3,
     )
 
-    table_4_11["F01"]["sGLU"] = Dict(
+    table_4_12["F01"]["sGLU"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.0,
         "errs" => 5.2,
     )
 
-    table_4_11["F01"]["sLAC"] = Dict(
+    table_4_12["F01"]["sLAC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 7.8,
         "errs" => 8.2,
     )
 
-    table_4_11["F01"]["sNH4"] = Dict(
+    table_4_12["F01"]["sNH4"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 3.4,
         "errs" => 5.1,
     )
 
-    table_4_11["F01"]["sPYR"] = Dict(
+    table_4_12["F01"]["sPYR"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.4,
         "errs" => 6.6,
     )
 
-    table_4_11["F01"]["yALA/GLN"] = Dict(
+    table_4_12["F01"]["yALA/GLN"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 0.2,
         "errs" => 8.5,
     )
 
-    table_4_11["F01"]["yCVv/GLC"] = Dict(
+    table_4_12["F01"]["yCVv/GLC"] = Dict(
         "unit" => "μL/ mmol",
         "err_units" => "%",
         "val" => 626.0,
         "errs" => 4.0,
     )
 
-    table_4_11["F01"]["yCVv/GLN"] = Dict(
+    table_4_12["F01"]["yCVv/GLN"] = Dict(
         "unit" => "μL/ mmol",
         "err_units" => "%",
         "val" => 1865.0,
         "errs" => 10.8,
     )
 
-    table_4_11["F01"]["yLAC/GLC"] = Dict(
+    table_4_12["F01"]["yLAC/GLC"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 0.9,
         "errs" => 8.2,
     )
 
-    table_4_11["F01"]["yNH4/GLN"] = Dict(
+    table_4_12["F01"]["yNH4/GLN"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 1.3,
         "errs" => 3.1,
     )
 
-    table_4_11["F01"]["μ"] = Dict(
+    table_4_12["F01"]["μ"] = Dict(
         "unit" => "1/ hr",
         "err_units" => "%",
         "val" => 0.0156,
@@ -1861,239 +1861,239 @@ function _load_rathCharacterisationCellGrowth2017_table_4_11()
     )
 
     # --------------------------------
-    table_4_11["F02"] = Dict()
-    table_4_11["F02"]["CD"] = Dict(
+    table_4_12["F02"] = Dict()
+    table_4_12["F02"]["CD"] = Dict(
         "unit" => "μm",
         "err_units" => "%",
         "val" => 17.3,
         "errs" => 0.3,
     )
 
-    table_4_11["F02"]["CVv"] = Dict(
+    table_4_12["F02"]["CVv"] = Dict(
         "unit" => "μL/ mL",
         "err_units" => "%",
         "val" => 4.17,
         "errs" => 2.3,
     )
 
-    table_4_11["F02"]["D"] = Dict(
+    table_4_12["F02"]["D"] = Dict(
         "unit" => "1/ hr",
         "err_units" => "%",
         "val" => 0.015,
         "errs" => 0.0,
     )
 
-    table_4_11["F02"]["Xd"] = Dict(
+    table_4_12["F02"]["Xd"] = Dict(
         "unit" => "1e6 cells/ mL",
         "err_units" => "%",
         "val" => 0.07,
         "errs" => 1.5,
     )
 
-    table_4_11["F02"]["Xv"] = Dict(
+    table_4_12["F02"]["Xv"] = Dict(
         "unit" => "1e6 cells/ mL",
         "err_units" => "%",
         "val" => 1.54,
         "errs" => 2.7,
     )
 
-    table_4_11["F02"]["cGAL"] = Dict(
+    table_4_12["F02"]["cGAL"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F02"]["cGLC"] = Dict(
+    table_4_12["F02"]["cGLC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 10.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F02"]["cGLN"] = Dict(
+    table_4_12["F02"]["cGLN"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 2.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F02"]["qA1AT"] = Dict(
+    table_4_12["F02"]["qA1AT"] = Dict(
         "unit" => "pg/ cell d",
         "err_units" => "%",
         "val" => -8.7,
         "errs" => 5.5,
     )
 
-    table_4_11["F02"]["qALA"] = Dict(
+    table_4_12["F02"]["qALA"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -1.45,
         "errs" => 35.6,
     )
 
-    table_4_11["F02"]["qASP"] = Dict(
+    table_4_12["F02"]["qASP"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 0.81,
         "errs" => 63.0,
     )
 
-    table_4_11["F02"]["qGAL"] = Dict(
+    table_4_12["F02"]["qGAL"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F02"]["qGLC"] = Dict(
+    table_4_12["F02"]["qGLC"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 27.1,
         "errs" => 2.0,
     )
 
-    table_4_11["F02"]["qGLN"] = Dict(
+    table_4_12["F02"]["qGLN"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 4.1,
         "errs" => 11.9,
     )
 
-    table_4_11["F02"]["qGLU"] = Dict(
+    table_4_12["F02"]["qGLU"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -0.7,
         "errs" => 30.3,
     )
 
-    table_4_11["F02"]["qLAC"] = Dict(
+    table_4_12["F02"]["qLAC"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -29.7,
         "errs" => 5.7,
     )
 
-    table_4_11["F02"]["qNH4"] = Dict(
+    table_4_12["F02"]["qNH4"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -8.8,
         "errs" => 15.9,
     )
 
-    table_4_11["F02"]["qPYR"] = Dict(
+    table_4_12["F02"]["qPYR"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 4.8,
         "errs" => 2.8,
     )
 
-    table_4_11["F02"]["sA1AT"] = Dict(
+    table_4_12["F02"]["sA1AT"] = Dict(
         "unit" => "mg/ L",
         "err_units" => "%",
         "val" => 37.5,
         "errs" => 3.8,
     )
 
-    table_4_11["F02"]["sALA"] = Dict(
+    table_4_12["F02"]["sALA"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.7,
         "errs" => 20.8,
     )
 
-    table_4_11["F02"]["sASP"] = Dict(
+    table_4_12["F02"]["sASP"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.9,
         "errs" => 7.8,
     )
 
-    table_4_11["F02"]["sGAL"] = Dict(
+    table_4_12["F02"]["sGAL"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F02"]["sGLC"] = Dict(
+    table_4_12["F02"]["sGLC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F02"]["sGLN"] = Dict(
+    table_4_12["F02"]["sGLN"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.7,
         "errs" => 52.6,
     )
 
-    table_4_11["F02"]["sGLU"] = Dict(
+    table_4_12["F02"]["sGLU"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.0,
         "errs" => 5.8,
     )
 
-    table_4_11["F02"]["sLAC"] = Dict(
+    table_4_12["F02"]["sLAC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 9.2,
         "errs" => 6.3,
     )
 
-    table_4_11["F02"]["sNH4"] = Dict(
+    table_4_12["F02"]["sNH4"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 2.5,
         "errs" => 14.6,
     )
 
-    table_4_11["F02"]["sPYR"] = Dict(
+    table_4_12["F02"]["sPYR"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.4,
         "errs" => 9.8,
     )
 
-    table_4_11["F02"]["yALA/GLN"] = Dict(
+    table_4_12["F02"]["yALA/GLN"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 0.3,
         "errs" => 49.5,
     )
 
-    table_4_11["F02"]["yCVv/GLC"] = Dict(
+    table_4_12["F02"]["yCVv/GLC"] = Dict(
         "unit" => "μL/ mmol",
         "err_units" => "%",
         "val" => 573.0,
         "errs" => 2.0,
     )
 
-    table_4_11["F02"]["yCVv/GLN"] = Dict(
+    table_4_12["F02"]["yCVv/GLN"] = Dict(
         "unit" => "μL/ mmol",
         "err_units" => "%",
         "val" => 3856.0,
         "errs" => 13.5,
     )
 
-    table_4_11["F02"]["yLAC/GLC"] = Dict(
+    table_4_12["F02"]["yLAC/GLC"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 1.1,
         "errs" => 6.6,
     )
 
-    table_4_11["F02"]["yNH4/GLN"] = Dict(
+    table_4_12["F02"]["yNH4/GLN"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 1.8,
         "errs" => 8.4,
     )
 
-    table_4_11["F02"]["μ"] = Dict(
+    table_4_12["F02"]["μ"] = Dict(
         "unit" => "1/ hr",
         "err_units" => "%",
         "val" => 0.0155,
@@ -2101,239 +2101,239 @@ function _load_rathCharacterisationCellGrowth2017_table_4_11()
     )
 
     # --------------------------------
-    table_4_11["F03"] = Dict()
-    table_4_11["F03"]["CD"] = Dict(
+    table_4_12["F03"] = Dict()
+    table_4_12["F03"]["CD"] = Dict(
         "unit" => "μm",
         "err_units" => "%",
         "val" => 17.5,
         "errs" => 2.5,
     )
 
-    table_4_11["F03"]["CVv"] = Dict(
+    table_4_12["F03"]["CVv"] = Dict(
         "unit" => "μL/ mL",
         "err_units" => "%",
         "val" => 5.48,
         "errs" => 11.5,
     )
 
-    table_4_11["F03"]["D"] = Dict(
+    table_4_12["F03"]["D"] = Dict(
         "unit" => "1/ hr",
         "err_units" => "%",
         "val" => 0.0144,
         "errs" => 0.0,
     )
 
-    table_4_11["F03"]["Xd"] = Dict(
+    table_4_12["F03"]["Xd"] = Dict(
         "unit" => "1e6 cells/ mL",
         "err_units" => "%",
         "val" => 0.074,
         "errs" => 31.7,
     )
 
-    table_4_11["F03"]["Xv"] = Dict(
+    table_4_12["F03"]["Xv"] = Dict(
         "unit" => "1e6 cells/ mL",
         "err_units" => "%",
         "val" => 1.963,
         "errs" => 17.1,
     )
 
-    table_4_11["F03"]["cGAL"] = Dict(
+    table_4_12["F03"]["cGAL"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F03"]["cGLC"] = Dict(
+    table_4_12["F03"]["cGLC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 20.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F03"]["cGLN"] = Dict(
+    table_4_12["F03"]["cGLN"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 2.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F03"]["qA1AT"] = Dict(
+    table_4_12["F03"]["qA1AT"] = Dict(
         "unit" => "pg/ cell d",
         "err_units" => "%",
         "val" => -7.8,
         "errs" => 14.8,
     )
 
-    table_4_11["F03"]["qALA"] = Dict(
+    table_4_12["F03"]["qALA"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -0.53,
         "errs" => 42.1,
     )
 
-    table_4_11["F03"]["qASP"] = Dict(
+    table_4_12["F03"]["qASP"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 1.34,
         "errs" => 31.2,
     )
 
-    table_4_11["F03"]["qGAL"] = Dict(
+    table_4_12["F03"]["qGAL"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F03"]["qGLC"] = Dict(
+    table_4_12["F03"]["qGLC"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 43.6,
         "errs" => 10.4,
     )
 
-    table_4_11["F03"]["qGLN"] = Dict(
+    table_4_12["F03"]["qGLN"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 3.4,
         "errs" => 8.7,
     )
 
-    table_4_11["F03"]["qGLU"] = Dict(
+    table_4_12["F03"]["qGLU"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -0.3,
         "errs" => 20.1,
     )
 
-    table_4_11["F03"]["qLAC"] = Dict(
+    table_4_12["F03"]["qLAC"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -43.3,
         "errs" => 14.4,
     )
 
-    table_4_11["F03"]["qNH4"] = Dict(
+    table_4_12["F03"]["qNH4"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => -4.5,
         "errs" => 19.2,
     )
 
-    table_4_11["F03"]["qPYR"] = Dict(
+    table_4_12["F03"]["qPYR"] = Dict(
         "unit" => "nmol/ μL hr",
         "err_units" => "%",
         "val" => 3.4,
         "errs" => 6.4,
     )
 
-    table_4_11["F03"]["sA1AT"] = Dict(
+    table_4_12["F03"]["sA1AT"] = Dict(
         "unit" => "mg/ L",
         "err_units" => "%",
         "val" => 43.5,
         "errs" => 8.5,
     )
 
-    table_4_11["F03"]["sALA"] = Dict(
+    table_4_12["F03"]["sALA"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.5,
         "errs" => 14.8,
     )
 
-    table_4_11["F03"]["sASP"] = Dict(
+    table_4_12["F03"]["sASP"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.8,
         "errs" => 7.3,
     )
 
-    table_4_11["F03"]["sGAL"] = Dict(
+    table_4_12["F03"]["sGAL"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F03"]["sGLC"] = Dict(
+    table_4_12["F03"]["sGLC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.0,
         "errs" => 0.0,
     )
 
-    table_4_11["F03"]["sGLN"] = Dict(
+    table_4_12["F03"]["sGLN"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.3,
         "errs" => 42.6,
     )
 
-    table_4_11["F03"]["sGLU"] = Dict(
+    table_4_12["F03"]["sGLU"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.9,
         "errs" => 2.3,
     )
 
-    table_4_11["F03"]["sLAC"] = Dict(
+    table_4_12["F03"]["sLAC"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 17.4,
         "errs" => 19.6,
     )
 
-    table_4_11["F03"]["sNH4"] = Dict(
+    table_4_12["F03"]["sNH4"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 1.7,
         "errs" => 8.2,
     )
 
-    table_4_11["F03"]["sPYR"] = Dict(
+    table_4_12["F03"]["sPYR"] = Dict(
         "unit" => "mM",
         "err_units" => "%",
         "val" => 0.4,
         "errs" => 28.2,
     )
 
-    table_4_11["F03"]["yALA/GLN"] = Dict(
+    table_4_12["F03"]["yALA/GLN"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 0.2,
         "errs" => 44.1,
     )
 
-    table_4_11["F03"]["yCVv/GLC"] = Dict(
+    table_4_12["F03"]["yCVv/GLC"] = Dict(
         "unit" => "μL/ mmol",
         "err_units" => "%",
         "val" => 355.0,
         "errs" => 10.0,
     )
 
-    table_4_11["F03"]["yCVv/GLN"] = Dict(
+    table_4_12["F03"]["yCVv/GLN"] = Dict(
         "unit" => "μL/ mmol",
         "err_units" => "%",
         "val" => 4605.0,
         "errs" => 8.0,
     )
 
-    table_4_11["F03"]["yLAC/GLC"] = Dict(
+    table_4_12["F03"]["yLAC/GLC"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 1.0,
         "errs" => 19.5,
     )
 
-    table_4_11["F03"]["yNH4/GLN"] = Dict(
+    table_4_12["F03"]["yNH4/GLN"] = Dict(
         "unit" => "mol/ mol",
         "err_units" => "%",
         "val" => 1.3,
         "errs" => 16.5,
     )
 
-    table_4_11["F03"]["μ"] = Dict(
+    table_4_12["F03"]["μ"] = Dict(
         "unit" => "1/ hr",
         "err_units" => "%",
         "val" => 0.015,
@@ -2341,7 +2341,7 @@ function _load_rathCharacterisationCellGrowth2017_table_4_11()
     )
 
 
-    return table_4_11
+    return table_4_12
     
 end
 
@@ -2365,8 +2365,8 @@ _load_rathCharacterisationCellGrowth2017() = @tempcontextdb let
     # Table 4.10
     raw["Table4.10"] = MetXCultureHub._load_rathCharacterisationCellGrowth2017_table_4_10()
     
-    # Table 4.11
-    raw["Table4.11"] = MetXCultureHub._load_rathCharacterisationCellGrowth2017_table_4_11()
+    # Table 4.12
+    raw["Table4.12"] = MetXCultureHub._load_rathCharacterisationCellGrowth2017_table_4_12()
 
     @commit! ["Raw Data"] raw
 
@@ -2463,7 +2463,7 @@ _load_rathCharacterisationCellGrowth2017() = @tempcontextdb let
     # The correlation between dry cell weight, DCW (pg), and cell volume, CV (μm3), determined in a control experiment using the procedure described previously [22], was DCW = 0.25 × CV. 
     ρ = 0.25 # [pgCDW/μm³]
     
-    # from tabel 4.11
+    # from tabel 4.12
     @context! ["Proc Data"]
     for (culidx, culid) in enumerate(raw["cul_ids"])
 
@@ -2471,14 +2471,14 @@ _load_rathCharacterisationCellGrowth2017() = @tempcontextdb let
         
         # D [1/h]
         @context! [apiid = "D"]
-        @stage! val = raw["Table4.11"][culid]["D"]["val"]
+        @stage! val = raw["Table4.12"][culid]["D"]["val"]
         @stage! unit = "h^{-1}"
         @stage! err = 0.0
         @commitcontext!
         
         # μ [1/h]
         @context! [apiid = "μ"] 
-        @stage! val = raw["Table4.11"][culid]["μ"]["val"]
+        @stage! val = raw["Table4.12"][culid]["μ"]["val"]
         @stage! unit = "h^{-1}"
         @stage! err = 0.0
         @commitcontext!
@@ -2491,16 +2491,16 @@ _load_rathCharacterisationCellGrowth2017() = @tempcontextdb let
         # Xv [gCDW/mL] * 1e3 = Xv [gCDW/L]
         # Total: (4/3) * π * (CD/2)^3 * ρ * 1e-12 * Xv * 1e6 * 1e3
         @context! [apiid = "CD"] 
-        CD = raw["Table4.11"][culid]["CD"]["val"]
+        CD = raw["Table4.12"][culid]["CD"]["val"]
         @stage! val = CD
-        @stage! unit = raw["Table4.11"][culid]["CD"]["unit"]
-        @stage! err = raw["Table4.11"][culid]["CD"]["errs"] # TODO: check this error units
+        @stage! unit = raw["Table4.12"][culid]["CD"]["unit"]
+        @stage! err = raw["Table4.12"][culid]["CD"]["errs"] # TODO: check this error units
         @commitcontext!
         
         
         # Xv
         @context! [apiid = "Xv"] 
-        Xv0 = raw["Table4.11"][culid]["Xv"]["val"]
+        Xv0 = raw["Table4.12"][culid]["Xv"]["val"]
         Xv = (4/3) * π * (CD/2)^3 * ρ * 1e-12 * Xv0 * 1e6 * 1e3
         @stage! val = Xv
         @stage! unit = "gCDW L^{-1}"
@@ -2509,8 +2509,8 @@ _load_rathCharacterisationCellGrowth2017() = @tempcontextdb let
         
         # Xd
         @context! [apiid = "Xd"] 
-        Xd0 = raw["Table4.11"][culid]["Xd"]["val"]
-        Xd0_rerr = raw["Table4.11"][culid]["Xd"]["errs"] # Relative error
+        Xd0 = raw["Table4.12"][culid]["Xd"]["val"]
+        Xd0_rerr = raw["Table4.12"][culid]["Xd"]["errs"] # Relative error
         
         Xd = (4/3) * π * (CD/2)^3 * ρ * 1e-12 * Xd0 * 1e6 * 1e3
         @stage! val = Xd
@@ -2518,7 +2518,7 @@ _load_rathCharacterisationCellGrowth2017() = @tempcontextdb let
         @stage! err = Xd * Xd0_rerr / 100
         @commitcontext!
 
-        # Table4.11
+        # Table4.12
         # Any["qLAC", "qGLN", "yCVv/GLC", "qGAL", "μ", "sALA", "qALA", "qA1AT", "Xv", 
         # "sASP", "qNH4", "sGAL", "sGLC", "qASP", "D", "qGLC", "qPYR", "sA1AT", "qGLU", 
         # "sGLN", "sGLU", "cGLC", "sLAC", "cGLN", "sNH4", "sPYR", "yALA/GLN", "CVv", "Xd", 
@@ -2528,9 +2528,9 @@ _load_rathCharacterisationCellGrowth2017() = @tempcontextdb let
         for metid in ["ALA", "ASP", "GAL", "GLC", "GLN", "GLU", "LAC", "NH4", "PYR"]
             
             rawid = string("s", metid)
-            s_met = raw["Table4.11"][culid][rawid]["val"]
-            s_met_rerr = raw["Table4.11"][culid][rawid]["errs"]
-            @assert raw["Table4.11"][culid][rawid]["unit"] == "mM"
+            s_met = raw["Table4.12"][culid][rawid]["val"]
+            s_met_rerr = raw["Table4.12"][culid][rawid]["errs"]
+            @assert raw["Table4.12"][culid][rawid]["unit"] == "mM"
 
             apiid = string("s_", lowercase(metid))
             @context! apiid 
@@ -2552,8 +2552,8 @@ _load_rathCharacterisationCellGrowth2017() = @tempcontextdb let
             # q [nmol/ pgCDW L] * 1e-6 = q [mmol/ pgCDW L]
             # q [mmol/ pgCDW L] * 1e12 = q [mmol/ gCDW L]
             rawid = string("q", metid)
-            q0 = raw["Table4.11"][culid][rawid]["val"]
-            q_rerr = raw["Table4.11"][culid][rawid]["errs"]
+            q0 = raw["Table4.12"][culid][rawid]["val"]
+            q_rerr = raw["Table4.12"][culid][rawid]["errs"]
             @context! apiid = string("q_", lowercase(metid))
             push!(q_ids, apiid)
             @stage! metid = lowercase(metid)
@@ -2617,8 +2617,8 @@ end
 #     # Table 4.10
 #     raw["Table4.10"] = _load_rathCharacterisationCellGrowth2017_table_4_10()
     
-#     # Table 4.11
-#     raw["Table4.11"] = _load_rathCharacterisationCellGrowth2017_table_4_11()
+#     # Table 4.12
+#     raw["Table4.12"] = _load_rathCharacterisationCellGrowth2017_table_4_12()
 
 #     push!(db, "raw" => raw)
 
@@ -2677,16 +2677,16 @@ end
 #     # The correlation between dry cell weight, DCW (pg), and cell volume, CV (μm3), determined in a control experiment using the procedure described previously [22], was DCW = 0.25 × CV. 
 #     ρ = 0.25 # [pgCDW/μm³]
     
-#     # from tabel 4.11
+#     # from tabel 4.12
 #     for (i, culid) in enumerate(raw["cul_ids"])
         
 #         # D [1/h]
-#         val = raw["Table4.11"][culid]["D"]["val"]
+#         val = raw["Table4.12"][culid]["D"]["val"]
 #         unit = "h^{-1}"
 #         push!(db, "D", i, culid; val, unit)
 
 #         # μ [1/h]
-#         val = raw["Table4.11"][culid]["μ"]["val"]
+#         val = raw["Table4.12"][culid]["μ"]["val"]
 #         unit = "h^{-1}"
 #         push!(db, "μ", i, culid; val, unit)
 
@@ -2697,19 +2697,19 @@ end
 #         # Xv [cell/ mL] * mcell [gCDW/cell] = Xv [gCDW/mL]
 #         # Xv [gCDW/mL] * 1e3 = Xv [gCDW/L]
 #         # Total: (4/3) * π * (CD/2)^3 * ρ * 1e-12 * Xv * 1e6 * 1e3
-#         CD = raw["Table4.11"][culid]["CD"]["val"]
+#         CD = raw["Table4.12"][culid]["CD"]["val"]
         
 #         # Xv
-#         Xv0 = raw["Table4.11"][culid]["Xv"]["val"]
+#         Xv0 = raw["Table4.12"][culid]["Xv"]["val"]
 #         Xv = (4/3) * π * (CD/2)^3 * ρ * 1e-12 * Xv0 * 1e6 * 1e3
 #         push!(db, "Xv", i, culid; val = Xv, unit = "gCDW L^{-1}")
         
 #         # Xd
-#         Xd0 = raw["Table4.11"][culid]["Xd"]["val"]
+#         Xd0 = raw["Table4.12"][culid]["Xd"]["val"]
 #         Xd = (4/3) * π * (CD/2)^3 * ρ * 1e-12 * Xd0 * 1e6 * 1e3
 #         push!(db, "Xd", i, culid; val = Xd, unit = "gCDW L^{-1}")
 
-#         # Table4.11
+#         # Table4.12
 #         # Any["qLAC", "qGLN", "yCVv/GLC", "qGAL", "μ", "sALA", "qALA", "qA1AT", "Xv", 
 #         # "sASP", "qNH4", "sGAL", "sGLC", "qASP", "D", "qGLC", "qPYR", "sA1AT", "qGLU", 
 #         # "sGLN", "sGLU", "cGLC", "sLAC", "cGLN", "sNH4", "sPYR", "yALA/GLN", "CVv", "Xd", 
@@ -2717,8 +2717,8 @@ end
         
 #         # s_nut
 #         for rawid in ["sALA", "sASP", "sGAL", "sGLC", "sGLN", "sGLU", "sLAC", "sNH4", "sPYR"]
-#             s_met = raw["Table4.11"][culid][rawid]["val"]
-#             @assert raw["Table4.11"][culid][rawid]["unit"] == "mM"
+#             s_met = raw["Table4.12"][culid][rawid]["val"]
+#             @assert raw["Table4.12"][culid][rawid]["unit"] == "mM"
 #             apiid = string("s_", lowercase(rawid[2:end]))
 #             push!(db, apiid, i, culid; val = s_met, unit = "mM")
 #         end
@@ -2733,7 +2733,7 @@ end
 #             # q [nmol/ μm^3 L] / ρ [pgCDW/μm^3] = q [nmol/ pgCDW L]
 #             # q [nmol/ pgCDW L] * 1e-6 = q [mmol/ pgCDW L]
 #             # q [mmol/ pgCDW L] * 1e12 = q [mmol/ gCDW L]
-#             q0 = raw["Table4.11"][culid][rawid]["val"]
+#             q0 = raw["Table4.12"][culid][rawid]["val"]
 #             val = q0 * 1e-9 * 1e-6 * 1e12 / ρ
 #             unit = "mmol gCDW^{-1} L^{-1}"
 #             apiid = string("q_", lowercase(rawid[2:end]))
