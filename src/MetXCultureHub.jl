@@ -26,38 +26,40 @@
 
 module MetXCultureHub
 
-    # using MetXBase
-    using ContextDBs
-    using Serialization
+    # NEED REIMPLEMENTATION
 
-    import Scratch
+    # # using MetXBase
+    # using ContextDBs
+    # using Serialization
 
-    export query, queryfirst
+    # import Scratch
+
+    # export query, queryfirst
     
-    #! include core
-    include("core/api.jl")
-    include("core/tools.jl")
+    # #! include core
+    # include("core/api.jl")
+    # include("core/tools.jl")
     
-    #! include cultures
-    # include("cultures/folsomPhysiologicalBiomassElemental2015.jl")
-    # include("cultures/kayserMetabolicFluxAnalysis2005.jl")
-    include("cultures/rathCharacterisationCellGrowth2017.jl")
-    # include("cultures/seniorRegulationNitrogenMetabolism1975.jl")
+    # #! include cultures
+    # # include("cultures/folsomPhysiologicalBiomassElemental2015.jl")
+    # # include("cultures/kayserMetabolicFluxAnalysis2005.jl")
+    # include("cultures/rathCharacterisationCellGrowth2017.jl")
+    # # include("cultures/seniorRegulationNitrogenMetabolism1975.jl")
     
-    #! include Utils
+    # #! include Utils
 
 
-    function __init__()
+    # function __init__()
 
-        # scratch
-        global CULS_DIR = Scratch.get_scratch!("cultures_reg")
+    #     # scratch
+    #     global CULS_DIR = Scratch.get_scratch!("cultures_reg")
         
-        empty!(CULTURES_REG)
-        # _register_folsomPhysiologicalBiomassElemental2015()
-        # _register_kayserMetabolicFluxAnalysis2005()
-        _register_rathCharacterisationCellGrowth2017()
-        # _register_seniorRegulationNitrogenMetabolism1975()
+    #     empty!(CULTURES_REG)
+    #     # _register_folsomPhysiologicalBiomassElemental2015()
+    #     # _register_kayserMetabolicFluxAnalysis2005()
+    #     _register_rathCharacterisationCellGrowth2017()
+    #     # _register_seniorRegulationNitrogenMetabolism1975()
         
-    end
+    # end
 
 end
