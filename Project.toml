@@ -1,11 +1,11 @@
 name = "MetXCultureHub"
 uuid = "c8a5ff98-18da-494d-98cc-f2d3bae7da4c"
 authors = ["The members of MetabolicXploration"]
-version = "0.1.1"
+version = "0.2.0"
 
 [deps]
-Scratch = "6c6a2e73-6563-6170-7368-637461726353"
 Serialization = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
+Scratch = "6c6a2e73-6563-6170-7368-637461726353"
 
 [compat]
 julia = "1.6"
